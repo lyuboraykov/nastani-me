@@ -1,0 +1,196 @@
+html,
+body,
+#main,
+#initial-page {
+    height: 100%;
+    width: 100%;
+    text-transform: initial;
+}
+
+#main {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/home.jpg");
+    background-repeat: no-repeat;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    color: white;
+}
+
+#initial-page {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+#logo-heading {
+    font-size: 42px;
+    font-weight: bold;
+}
+
+#login-section {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 20%;
+    margin-bottom: 10px;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+
+.login-buttons {
+    width: 90%;
+    height: 2.5rem;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 0.25rem;
+    text-align: center;
+    line-height: 2.5rem;
+    font-weight: bold;
+}
+
+.reds {
+    background-color: #ff5c5f;
+}
+
+.blues {
+    background-color: #017c87;
+}
+
+#logo {
+    width: 10rem;
+}
+
+#main-header {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+#reg-login-page {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.blur-page {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/home.jpg");
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+#header-bar {
+    font-size: 2rem;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    margin: 10px 5%;
+}
+
+#header-bar span {
+    font-size: 2.5rem;
+}
+
+#login-reg-section {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 25%;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.fb {
+    background-color: blue;
+}
+
+.gg {
+    background-color: red;
+}
+
+#login-email {
+    height: 40%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+
+#login-email > input {
+    width: 90%;
+    padding-left: 10px;
+    height: 2rem;
+}
+
+.red-links {
+    color: red;
+    text-decoration: underline;
+}
+
+#terms {
+    font-weight: normal;
+    font-size: 0.75rem;
+}
+
+#terms > p {
+    text-align: center;
+}

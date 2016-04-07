@@ -16,11 +16,12 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <hook type="before_prepare" src="scripts/appBeforePrepare.js" />
+    <hook type="before_compile" src="scripts/appBeforePrepare.js" />
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
     <platform name="ios">
+        <preference name="orientation" value="portrait" />
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
