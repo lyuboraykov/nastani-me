@@ -118,7 +118,7 @@ body,
 }
 
 .blur-page {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/home.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
     -webkit-filter: blur(2px);
     -moz-filter: blur(2px);
     -o-filter: blur(2px);
@@ -207,7 +207,7 @@ body,
 
 #main-picture {
     background-image: url("../img/italy.jpg");
-    height: 70%;
+    height: 100%;
     width: 100%;
     background-size: cover;
     position: relative;
@@ -238,15 +238,21 @@ body,
     justify-content: space-around;
 }
 
-#home-main {
+#home-header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: #ffffff;
+    height: 60%;
+}
+
+#home-main {
+    background-color: #fff;
 }
 
 .menu-footer {
     border-top: 1px solid grey;
+    height: 10%;
 }
 
 .menu-footer > nav {
@@ -260,15 +266,72 @@ body,
 }
 
 .headings-h1 {
-    font-size: 2.5rem;
+    font-size: 250%;
     padding: 5%;
-    text-align: right;f
 }
 
 h3 {
-    font-size: 1.25rem;
+    font-size: 160%;
     font-style: normal;
     padding: 5%;
     margin: 0;
     font-weight: normal;
+}
+
+#home-content {
+    height: 30%;
+}
+
+#user-menu {
+    position: absolute;
+    height: 100%;
+    background-color: white;
+    right: 0;
+    top: 0;
+    overflow: hidden;
+    width: 0%;
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes example {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 65%;
+    }
+}
+
+.animate-user {
+    animation-name: example;
+    animation-duration: 0.7s;
+    width: 65% !important;
+}
+
+#aside-picture {
+    background-image: url("../img/user.jpg");
+    height: 25%;
+    background-size: cover;
+    border-radius: 100%;
+    width: 70%;
+    align-self: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+#aside-navigation {
+    border-top: 1px solid black;
+}
+
+.aside-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.aside-list li {
+    padding: 5%;
+    font-size: 200%;
+    border-bottom: 1px solid black;
 }

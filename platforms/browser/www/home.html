@@ -42,23 +42,45 @@
 
 <body>
     <main class="full-screen" id="home-main">
-        <div id="main-picture">
-            <span id="search-icon" class="reds"><i class="fa fa-4x fa-search whites"></i></span>
-        </div>
-        <h1 class="headings-h1">Hi, Martin</h1>
-        <h3>Explore places nearby you based on your location, your most recent searches and your old bookings.</h3>
+        <header id="home-header">
+            <div id="main-picture">
+                <span id="search-icon" class="reds"><i class="fa fa-4x fa-search whites"></i></span>
+            </div>
+        </header>
+        <section id="home-content">
+            <h1 class="headings-h1">Hi, Martin</h1>
+            <h3>Explore places nearby you based on your location, your most recent searches and your old bookings.</h3>
+        </section>
         <footer class="menu-footer">
             <nav class="nav-list">
                 <ul class="list">
-                    <li><a href="" title=""><i class="menu-icon fa fa-3x fa-bed reds-clicked"></i></a></li>
-                    <li><a href="" title=""><i class="menu-icon fa fa-3x fa-home"></i></a></li>
-                    <li><a href="" title=""><i class="menu-icon fa fa-3x fa-envelope-o"></i></a></li>
-                    <li><a href="" title=""><i class="menu-icon fa fa-3x fa-history"></i></a></li>
-                    <li><a href="" title=""><i class="menu-icon fa fa-3x fa-user"></i></a></li>
+                    <li><i class="menu-icon fa fa-4x fa-bed reds-clicked"></i></li>
+                    <li><i class="menu-icon fa fa-4x fa-home"></i></li>
+                    <li><i class="menu-icon fa fa-4x fa-envelope-o"></i></li>
+                    <li><i class="menu-icon fa fa-4x fa-history"></i></li>
+                    <li><i class="menu-icon fa fa-4x fa-user" id="user-icon"></i></li>
                 </ul>
             </nav>
         </footer>
     </main>
+    <aside id="user-menu">
+        <div id="aside-picture">
+            
+        </div>
+
+        <nav id="aside-navigation">
+            <ul class="aside-list">
+                <li>Settings</li>
+                <li>List your places</li>
+                <li>Invite friends</li>
+                <li>Help</li>
+            </ul>
+        </nav>
+
+        <footer id="aside-footer">
+            
+        </footer>
+    </aside>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/bundle.js"></script>
 </body>
