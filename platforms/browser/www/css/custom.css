@@ -17,6 +17,7 @@ body,
     -ms-flex-direction: column;
     flex-direction: column;
     color: white;
+    background-size: cover;
 }
 
 #initial-page {

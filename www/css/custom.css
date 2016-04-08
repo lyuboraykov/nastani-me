@@ -1,7 +1,8 @@
 html,
 body,
 #main,
-#initial-page {
+#initial-page,
+.full-screen {
     height: 100%;
     width: 100%;
     text-transform: initial;
@@ -17,6 +18,7 @@ body,
     -ms-flex-direction: column;
     flex-direction: column;
     color: white;
+    background-size: cover;
 }
 
 #initial-page {
@@ -193,4 +195,21 @@ body,
 
 #terms > p {
     text-align: center;
+}
+
+#main-picture {
+    background-image: url("../img/italy.jpg");
+    height: 70%;
+    width: 100%;
+    background-size: cover;
+    position: relative;
+}
+
+#search-icon {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    border-radius: 100%;
+    bottom: -40px;
+    left: 10%;
 }
