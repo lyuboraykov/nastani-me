@@ -2,7 +2,9 @@
     var initialPageButtons = document.querySelectorAll("#initial-page .login-buttons"),
         initialPage = document.getElementById("initial-page"),
         initialHeader = document.getElementById("main-header"),
-        loginPage = document.getElementById("reg-login-page");
+        loginPage = document.getElementById("reg-login-page"),
+        exitButton = document.getElementsByClassName("exit-button")[0],
+        fbButton = document.getElementsByClassName("fb")[0];
 
     [].forEach.call(initialPageButtons, function(button) {
         button.addEventListener("click", function(event) {
@@ -24,10 +26,16 @@
         });
     });
 
-    document.getElementsByClassName("exit-button")[0].addEventListener("click", function() {
+    exitButton.addEventListener("click", function() {
         loginPage.classList.add("hidden");
         initialPage.classList.remove("blur-page");
         initialHeader.classList.remove("hidden");
         [].forEach.call(initialPageButtons, function(oButton) { oButton.classList.remove("hidden") });
     });
+
+
+    fbButton.addEventListener("click", function() {
+        window.location.href = 'home.html';
+    });
+
 })();
