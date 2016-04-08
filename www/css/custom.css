@@ -72,7 +72,7 @@ body,
 }
 
 .whites {
-    color: #fff  !important;
+    color: #fff !important;
 }
 
 .blues {
@@ -246,7 +246,6 @@ body,
 }
 
 .menu-footer {
-    height: 7%;
     border-top: 1px solid grey;
 }
 
@@ -262,6 +261,8 @@ body,
 
 .headings-h1 {
     font-size: 2.5rem;
+    padding: 5%;
+    text-align: right;f
 }
 
 h3 {
