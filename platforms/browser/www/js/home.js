@@ -1,7 +1,9 @@
 (function() {
     var navIcons = document.getElementsByClassName("menu-icon"),
         pages = document.getElementsByClassName("page"),
-        profile = document.getElementById("user-icon");
+        profile = document.getElementById("user-icon"),
+        messagesThread = document.getElementById("thread1"),
+        storageKey = "nastani.me.last.page";
 
     [].forEach.call(navIcons, function(el) {
         el.addEventListener("click", function(event) {
@@ -44,6 +46,16 @@
         } else {
             return;
         }
+    }
+
+    messagesThread.addEventListener("click", function() {
+        localStorage.setItem(storageKey, "messages");
+        window.location.href = 'chat.html';
+    });
+
+    if(localStorage.getItem(storageKey)) {
+        var value = localStorage.getItem(storageKey);
+        document.getElementById(value + "-icon").click();
     }
 
 })();
