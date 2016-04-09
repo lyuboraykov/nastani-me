@@ -16,8 +16,10 @@
     });
 
     profile.addEventListener("click", function() {
-        document.getElementById("user-menu").classList.add("animate-user");
+        document.getElementById("animate-child").classList.add("animate-user");
         document.getElementById("home-main").classList.add("blur-page");
+        document.getElementById("user-menu").classList.add("bigger-index");
+
         setTimeout(function() {
             document.getElementById("home-main").addEventListener("click", blurListener);
         }, 0);
@@ -28,8 +30,9 @@
         document.getElementById("home-main").removeEventListener("click", blurListener);
 
         if (event.target.id !== "user-menu") {
-            document.getElementById("user-menu").classList.remove("animate-user");
+            document.getElementById("animate-child").classList.remove("animate-user");
             document.getElementById("home-main").classList.remove("blur-page");
+            document.getElementById("user-menu").classList.remove("bigger-index");
         } else {
             return;
         }

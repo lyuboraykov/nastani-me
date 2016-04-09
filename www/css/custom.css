@@ -217,7 +217,7 @@ body,
     width: 80px;
     height: 80px;
     position: absolute;
-    border-radius: 100%;
+    border-radius: 50%;
     bottom: -40px;
     left: 5%;
     text-align: center;
@@ -285,35 +285,27 @@ h3 {
 #user-menu {
     position: absolute;
     height: 100%;
-    background-color: white;
+    background-color: transparent;
     right: 0;
     top: 0;
     overflow: hidden;
     width: 0%;
     display: flex;
     flex-direction: column;
-}
-
-@keyframes example {
-    0% {
-        width: 0%;
-    }
-    100% {
-        width: 65%;
-    }
+    width: 60%;
+    z-index: -1;
+    overflow: hidden;
 }
 
 .animate-user {
-    animation-name: example;
-    animation-duration: 0.7s;
-    width: 65% !important;
+    transform: translateX(0) !important;
 }
 
 #aside-picture {
     background-image: url("../img/user.jpg");
     height: 25%;
     background-size: cover;
-    border-radius: 100%;
+    border-radius: 50%;
     width: 70%;
     align-self: center;
     margin-top: 10%;
@@ -334,4 +326,18 @@ h3 {
     padding: 5%;
     font-size: 200%;
     border-bottom: 1px solid black;
+}
+
+#animate-child {
+    width: 100%;
+    height: 100%;
+    background: white;
+    transform: translateX(100%);
+    transition: transform .256s ease-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.bigger-index {
+    z-index: 1 !important;
 }
