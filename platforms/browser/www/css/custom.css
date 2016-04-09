@@ -250,14 +250,85 @@ body,
     background-color: #fff;
 }
 
+#messages-header {
+    background-color: #ff5c5f;
+}
+
+#messages-header h1 {
+    color: #ffffff;
+    text-align: center;
+    border-bottom: 1px solid #c2c2c2;
+}
+
+#messages-content {
+    height: 90%;
+}
+
+#messages-content .message-thread {
+    height: 120px;
+    border-bottom: 1px solid #c2c2c2;
+    padding: 3%;
+    position: relative;
+}
+
+#messages-content .message-thread .thread-content {
+    padding-left: 70px;
+    font-size: 14px;
+}
+
+#messages-content .message-thread .user-name {
+    font-size: 20px;
+    vertical-align: top;
+}
+
+#messages-content .message-thread .time-ago {
+    color: #838383;
+    font-size: 11px;
+    float: right;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+#messages-content .message-thread .location {
+    color: #838383;
+}
+
+#messages-content .message-thread .user-img {
+    float: left;
+    height: 50px;
+    width: 50px;
+    background-size: cover;
+    border-radius: 50%;
+    align-self: center;
+    display: inline-block;
+}
+
+#user1-img {
+    background-image: url("../img/user1.jpg");
+}
+
+#user2-img {
+    background-image: url("../img/user2.jpg");
+}
+
 .menu-footer {
     border-top: 1px solid grey;
     height: 10%;
+    width: 100%;
+    bottom: 0;
+    float: left;
+    position: fixed;
 }
 
 .menu-footer > nav {
     height: 100%;
     width: 100%;
+}
+
+.page {
+    height: 90%;
+    width: 100%;
+    position: absolute;
 }
 
 .fa {

@@ -1,11 +1,19 @@
 (function() {
-    var navIcons = document.getElementsByClassName("menu-icon");
-    var profile = document.getElementById("user-icon");
+    var navIcons = document.getElementsByClassName("menu-icon"),
+        pages = document.getElementsByClassName("page"),
+        profile = document.getElementById("user-icon");
+
     [].forEach.call(navIcons, function(el) {
         el.addEventListener("click", function(event) {
             if (event.target.id === "user-icon") {
                 return;
             }
+
+            [].forEach.call(pages, function(page) {
+                page.classList.add("hidden");
+            });
+            document.getElementById(this.id.split("-")[0]).classList.remove("hidden");
+
             document.getElementsByClassName("reds-clicked")[0].classList.remove("reds-clicked");
             this.classList.add("reds-clicked");
 

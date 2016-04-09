@@ -42,22 +42,51 @@
 
 <body>
     <main class="full-screen" id="home-main">
-        <header id="home-header">
-            <div id="main-picture">
-                <span id="search-icon" class="reds"><i class="fa fa-4x fa-search whites"></i></span>
-            </div>
-        </header>
-        <section id="home-content">
-            <h1 class="headings-h1">Hi, Martin</h1>
-            <h3>Explore places nearby you based on your location, your most recent searches and your old bookings.</h3>
-        </section>
+        <div id="home" class="page">
+            <header id="home-header">
+                <div id="main-picture">
+                    <span id="search-icon" class="reds"><i class="fa fa-4x fa-search whites"></i></span>
+                </div>
+            </header>
+            <section id="home-content">
+                <h1 class="headings-h1">Hi, Martin</h1>
+                <h3>Explore places nearby you based on your location, your most recent searches and your old bookings.</h3>
+            </section>
+        </div>
+        <div id="places" class="page hidden"></div>
+        <div id="messages" class="page hidden">
+            <header id="messages-header">
+                <h1 class="headings-h1">Messages</h1>
+            </header>
+            <section id="messages-content">
+                <div class="message-thread">
+                    <div class="user-img" id="user1-img"></div>
+                    <div class="thread-content">
+                        <span class="user-name">Kateto Goranova</span>
+                        <span class="time-ago">5 days ago</span>
+                        <p class="last-message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse maximus nisi vel vestibulum sagittis.</p>
+                        <span class="location">House, Gotse Delchev</span>
+                    </div>
+                </div>
+                <div class="message-thread">
+                    <div class="user-img" id="user2-img"></div>
+                    <div class="thread-content">
+                        <span class="user-name">Lyubo Raykov</span>
+                        <span class="time-ago">6 days ago</span>
+                        <p class="last-message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse maximus nisi vel vestibulum sagittis.</p>
+                        <span class="location">Apartment, Gabrovo</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div id="trips" class="page hidden"></div>
         <footer class="menu-footer">
             <nav class="nav-list">
                 <ul class="list">
-                    <li><i class="menu-icon fa fa-4x fa-bed reds-clicked"></i></li>
-                    <li><i class="menu-icon fa fa-4x fa-home"></i></li>
-                    <li><i class="menu-icon fa fa-4x fa-envelope-o"></i></li>
-                    <li><i class="menu-icon fa fa-4x fa-history"></i></li>
+                    <li><i class="menu-icon fa fa-4x fa-bed reds-clicked" id="home-icon"></i></li>
+                    <li><i class="menu-icon fa fa-4x fa-home" id="places-icon"></i></li>
+                    <li><i class="menu-icon fa fa-4x fa-envelope-o" id="messages-icon"></i></li>
+                    <li><i class="menu-icon fa fa-4x fa-history" id="trips-icon"></i></li>
                     <li><i class="menu-icon fa fa-4x fa-user" id="user-icon"></i></li>
                 </ul>
             </nav>
