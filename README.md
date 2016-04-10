@@ -2,12 +2,18 @@
 
 This is an university project for designing user interface.
 
-## Running
+## Setuping
 
 ```sh
 npm install
 npm install -g phonegap
-phonegap serve
+```
+
+## Running
+```sh
+# two consoles have to be started
+npm run watch  # in one console
+phonegap serve  # in another
 # open browser on the shown URL or use the phonegap app on the phone
 ```
 
