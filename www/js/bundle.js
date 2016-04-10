@@ -65,7 +65,9 @@ var Constants = exports.Constants = {
     home: '/home.html',
     chat: '/chat.html',
     index: '/'
-  }
+  },
+
+  storageKey: "nastani.me.last.page"
 };
 
 },{}],4:[function(require,module,exports){
@@ -74,13 +76,16 @@ var Constants = exports.Constants = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.Home = undefined;
+
+var _constants = require("./constants");
+
 var Home = exports.Home = {
   initialize: function initialize() {
     var navIcons = document.getElementsByClassName("menu-icon"),
         pages = document.getElementsByClassName("page"),
         profile = document.getElementById("user-icon"),
-        messagesThread = document.getElementById("thread1"),
-        storageKey = "nastani.me.last.page";
+        messagesThread = document.getElementById("thread1");
 
     [].forEach.call(navIcons, function (el) {
       el.addEventListener("click", function (event) {
@@ -125,18 +130,18 @@ var Home = exports.Home = {
     }
 
     messagesThread.addEventListener("click", function () {
-      localStorage.setItem(storageKey, "messages");
+      localStorage.setItem(_constants.Constants.storageKey, "messages");
       window.location.href = 'chat.html';
     });
 
-    if (localStorage.getItem(storageKey)) {
-      var value = localStorage.getItem(storageKey);
+    if (localStorage.getItem(_constants.Constants.storageKey)) {
+      var value = localStorage.getItem(_constants.Constants.storageKey);
       document.getElementById(value + "-icon").click();
     }
   }
 };
 
-},{}],5:[function(require,module,exports){
+},{"./constants":3}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -190,6 +195,7 @@ var Index = exports.Index = {
     });
 
     fbButton.addEventListener("click", function () {
+      localStorage.setItem(_constants.Constants.storageKey, "home");
       window.location.href = _constants.Constants.pages.home;
     });
   }

@@ -1,10 +1,11 @@
+import {Constants} from './constants';
+
 export var Home = {
   initialize() {
     var navIcons = document.getElementsByClassName("menu-icon"),
     pages = document.getElementsByClassName("page"),
     profile = document.getElementById("user-icon"),
-    messagesThread = document.getElementById("thread1"),
-    storageKey = "nastani.me.last.page";
+    messagesThread = document.getElementById("thread1");
 
     [].forEach.call(navIcons, function(el) {
       el.addEventListener("click", function(event) {
@@ -50,12 +51,12 @@ export var Home = {
     }
 
     messagesThread.addEventListener("click", function() {
-      localStorage.setItem(storageKey, "messages");
+      localStorage.setItem(Constants.storageKey, "messages");
       window.location.href = 'chat.html';
     });
 
-    if (localStorage.getItem(storageKey)) {
-      var value = localStorage.getItem(storageKey);
+    if (localStorage.getItem(Constants.storageKey)) {
+      var value = localStorage.getItem(Constants.storageKey);
       document.getElementById(value + "-icon").click();
     }
   }

@@ -8,5 +8,7 @@ export var Constants = {
     home: '/home.html',
     chat: '/chat.html',
     index: '/'
-  }
+  },
+
+  storageKey: "nastani.me.last.page"
 };
