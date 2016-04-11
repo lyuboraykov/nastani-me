@@ -285,14 +285,19 @@ body,
     color: #838383;
 }
 
-.user-img {
+.user-img, .house-img {
     float: left;
-    height: 50px;
-    width: 50px;
+    height: 70px;
+    width: 70px;
     background-size: cover;
-    border-radius: 50%;
     align-self: center;
     display: inline-block;
+}
+
+.user-img {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
 }
 
 .user-img.img-small {
@@ -306,6 +311,14 @@ body,
 
 #user2-img {
     background-image: url("../img/user2.jpg");
+}
+
+#house1-img {
+    background-image: url("../img/house1.jpg");
+}
+
+#house2-img {
+    background-image: url("../img/house2.jpg");
 }
 
 .menu-footer {
@@ -511,4 +524,40 @@ h3 {
 #places-content .place-location {
     font-size: 1.6em;
     width: calc(100% - 7em);
+}
+
+.btn {
+    border: none;
+    border-radius: 3px;
+    background-color: #ff5c5f;
+    color: #ffffff;
+    font-size: 17px;
+    padding: 8px;
+}
+
+#trips-content .trip {
+    border-bottom: 1px solid #c2c2c2;
+    padding: 15px;
+}
+
+#trips-content .trip > .house-img {
+    margin-right: 20px;
+}
+
+#trips-content .trip > .info > .accomodation {
+    font-size: 22px;
+}
+
+#trips-content .trip > .info > .location {
+    font-size: 16px;
+}
+
+#trips-content .trip > .info > .time-period {
+    color: #838383;
+    font-size: 14px;
+}
+
+#trips-content .trip > .info > .btn {
+    float: right;
+    margin-top: -27px;
 }

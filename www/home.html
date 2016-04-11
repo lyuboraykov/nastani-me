@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
@@ -83,7 +82,33 @@
                 </div>
             </section>
         </div>
-        <div id="trips" class="page hidden"></div>
+        <div id="trips" class="page hidden">
+            <header id="trips-header" class="page-header">
+                <h1 class="headings-h1">My Trips</h1>
+            </header>
+            <section id="trips-content">
+                <div class="trip">
+                    <div class="house-img" id="house1-img"></div>
+                    <div class="info">
+                        <div class="accomodation">Riverside house</div>
+                        <div class="location">Gabrovo, Bulgaria</div>
+                        <div class="time-period">13 May - 5 July</div>
+                        <button type="button" class="btn">Details</button>
+                        <div style="clear: both;"></div>
+                    </div>
+                </div>
+                <div class="trip">
+                    <div class="house-img" id="house2-img"></div>
+                    <div class="info">
+                        <div class="accomodation">Apartment</div>
+                        <div class="location">Plovdiv, Bulgaria</div>
+                        <div class="time-period">13 August - 5 September</div>
+                        <button type="button" class="btn">Details</button>
+                        <div style="clear: both;"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
         <footer class="menu-footer">
             <nav class="nav-list">
                 <ul class="list">
@@ -116,5 +141,4 @@
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/bundle.js"></script>
 </body>
-
 </html>
