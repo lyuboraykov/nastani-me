@@ -251,16 +251,6 @@ body,
     background-color: #fff;
 }
 
-#messages-header {
-    background-color: #ff5c5f;
-}
-
-#messages-header h1 {
-    color: #ffffff;
-    text-align: center;
-    border-bottom: 1px solid #c2c2c2;
-}
-
 #messages-content {
     height: 90%;
 }
@@ -342,6 +332,17 @@ body,
     width: 100%;
     position: absolute;
 }
+
+.page-header {
+    background-color: #ff5c5f;
+}
+
+.page-header h1 {
+    color: #ffffff;
+    text-align: center;
+    border-bottom: 1px solid #c2c2c2;
+}
+
 
 .headings-h1 {
     font-size: 250%;
@@ -488,4 +489,26 @@ h3 {
     margin-left: 0.5em;
     margin-bottom: 0.1em;
     vertical-align: bottom;
+}
+
+#places-content > .place {
+    border-bottom: 1px solid #c2c2c2;
+    padding: 15px 10px;
+}
+
+#places-content .place-type,
+#places-content .place-location,
+#places-content .place-preview {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#places-content .place-type,
+#places-content .place-preview {
+    padding: 1em;
+}
+
+#places-content .place-location {
+    font-size: 1.6em;
+    width: calc(100% - 7em);
 }
