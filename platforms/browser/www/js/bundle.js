@@ -9,12 +9,14 @@ var _chat = require('./chat');
 
 var _home = require('./home');
 
+var _utils = require('./utils');
+
 var app = {
   getCurrentPage: function getCurrentPage() {
     return window.location.pathname;
   },
   initialize: function initialize() {
-    switch (this.getCurrentPage()) {
+    switch (_utils.Utils.getCurrentPage()) {
       case _constants.Constants.pages.index:
         _index.Index.initialize();
         break;
@@ -33,23 +35,29 @@ var app = {
 
 app.initialize();
 
-},{"./chat":2,"./constants":3,"./home":4,"./index":5}],2:[function(require,module,exports){
-"use strict";
+},{"./chat":2,"./constants":3,"./home":4,"./index":5,"./utils":6}],2:[function(require,module,exports){
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.Chat = undefined;
+
+var _constants = require('./constants');
+
+var _utils = require('./utils');
+
 var Chat = exports.Chat = {
   initialize: function initialize() {
     var backButton = document.getElementById("back-icon");
 
     backButton.addEventListener("click", function () {
-      window.location.href = 'home.html';
+      _utils.Utils.gotoPage(_constants.Constants.pages.home);
     });
   }
 };
 
-},{}],3:[function(require,module,exports){
+},{"./constants":3,"./utils":6}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -71,14 +79,16 @@ var Constants = exports.Constants = {
 };
 
 },{}],4:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.Home = undefined;
 
-var _constants = require("./constants");
+var _constants = require('./constants');
+
+var _utils = require('./utils');
 
 var Home = exports.Home = {
   initialize: function initialize() {
@@ -131,7 +141,7 @@ var Home = exports.Home = {
 
     messagesThread.addEventListener("click", function () {
       localStorage.setItem(_constants.Constants.storageKey, "messages");
-      window.location.href = 'chat.html';
+      _utils.Utils.gotoPage(_constants.Constants.pages.chat);
     });
 
     if (localStorage.getItem(_constants.Constants.storageKey)) {
@@ -141,7 +151,7 @@ var Home = exports.Home = {
   }
 };
 
-},{"./constants":3}],5:[function(require,module,exports){
+},{"./constants":3,"./utils":6}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -195,8 +205,7 @@ var Index = exports.Index = {
     });
 
     fbButton.addEventListener("click", function () {
-      localStorage.setItem(_constants.Constants.storageKey, "home");
-      window.location.href = _constants.Constants.pages.home;
+      _utils.Utils.gotoPage(_constants.Constants.pages.home);
     });
   }
 };
@@ -225,6 +234,34 @@ var Utils = exports.Utils = {
         element.classList.remove(cssClass);
       }
     });
+  },
+  isInPhoneGap: function isInPhoneGap() {
+    var FILE_PROTOCOL = 'file:',
+        HTTP_PROTOCOL = 'http:'; // not used, just for completeness
+    var currentProtocol = window.location.protocol;
+    if (currentProtocol === FILE_PROTOCOL) {
+      return true; // Yippee ki-yay, motherfucker
+    }
+    return false;
+  },
+  getCurrentPage: function getCurrentPage() {
+    if (this.isInPhoneGap()) {
+      // we only live once
+      var currentLocation = window.location.href,
+          currentLocationElements = currentLocation.split('/');
+      return '/' + currentLocationElements[currentLocationElements.length - 1];
+    }
+    return window.location.pathname;
+  },
+  gotoPage: function gotoPage(page) {
+    if (this.isInPhoneGap()) {
+      // GO HARDCORE GO
+      var currentPage = this.getCurrentPage();
+      window.location.href = window.location.href.replace(currentPage, page);
+    } else {
+      // we're in browser, things work normally
+      window.location.href = page;
+    }
   }
 };
 

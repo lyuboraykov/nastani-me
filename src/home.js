@@ -1,4 +1,5 @@
 import {Constants} from './constants';
+import {Utils} from './utils';
 
 export var Home = {
   initialize() {
@@ -52,7 +53,7 @@ export var Home = {
 
     messagesThread.addEventListener("click", function() {
       localStorage.setItem(Constants.storageKey, "messages");
-      window.location.href = 'chat.html';
+      Utils.gotoPage(Constants.pages.chat);
     });
 
     if (localStorage.getItem(Constants.storageKey)) {

@@ -42,8 +42,7 @@ export var Index = {
 
 
     fbButton.addEventListener("click", () => {
-      localStorage.setItem(Constants.storageKey, "home");
-      window.location.href = Constants.pages.home;
+      Utils.gotoPage(Constants.pages.home);
     });
 
   }

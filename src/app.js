@@ -2,6 +2,7 @@ import {Constants} from './constants';
 import {Index} from './index';
 import {Chat} from './chat';
 import {Home} from './home';
+import {Utils} from './utils';
 
 let app = {
   getCurrentPage() {
@@ -9,7 +10,7 @@ let app = {
   },
 
   initialize() {
-    switch (this.getCurrentPage()) {
+    switch (Utils.getCurrentPage()) {
       case Constants.pages.index:
         Index.initialize();
         break;
