@@ -9,6 +9,8 @@ var _chat = require('./chat');
 
 var _home = require('./home');
 
+var _help = require('./help');
+
 var _utils = require('./utils');
 
 var app = {
@@ -26,6 +28,9 @@ var app = {
       case _constants.Constants.pages.chat:
         _chat.Chat.initialize();
         break;
+      case _constants.Constants.pages.help:
+        _help.Help.initialize();
+        break;
       default:
         _index.Index.initialize();
         break;
@@ -35,7 +40,7 @@ var app = {
 
 app.initialize();
 
-},{"./chat":2,"./constants":3,"./home":4,"./index":5,"./utils":6}],2:[function(require,module,exports){
+},{"./chat":2,"./constants":3,"./help":4,"./home":5,"./index":6,"./utils":7}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -57,7 +62,7 @@ var Chat = exports.Chat = {
   }
 };
 
-},{"./constants":3,"./utils":6}],3:[function(require,module,exports){
+},{"./constants":3,"./utils":7}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -72,6 +77,7 @@ var Constants = exports.Constants = {
   pages: {
     home: '/home.html',
     chat: '/chat.html',
+    help: '/help.html',
     index: '/'
   },
 
@@ -79,6 +85,48 @@ var Constants = exports.Constants = {
 };
 
 },{}],4:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Help = undefined;
+
+var _constants = require('./constants');
+
+var _utils = require('./utils');
+
+var Help = exports.Help = {
+    initialize: function initialize() {
+        var backButtonMain = document.getElementById("back-icon-main"),
+            backButton = document.getElementById("back-icon"),
+            helpSuggestion = document.getElementById("help-suggestion"),
+            helpCenterHeader = document.getElementById("help-center"),
+            helpQuestionHeader = document.getElementById("help-question"),
+            helpSuggestions = document.getElementById("help-suggestions"),
+            helpAnswer = document.getElementById("help-answer");
+
+        backButtonMain.addEventListener("click", function () {
+            _utils.Utils.gotoPage(_constants.Constants.pages.home);
+        });
+
+        helpSuggestion.addEventListener("click", function () {
+            helpCenterHeader.classList.add("no-display");
+            helpQuestionHeader.classList.remove("no-display");
+            helpSuggestions.classList.add("no-display");
+            helpAnswer.classList.remove("no-display");
+        });
+
+        backButton.addEventListener("click", function () {
+            helpCenterHeader.classList.remove("no-display");
+            helpQuestionHeader.classList.add("no-display");
+            helpSuggestions.classList.remove("no-display");
+            helpAnswer.classList.add("no-display");
+        });
+    }
+};
+
+},{"./constants":3,"./utils":7}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -95,7 +143,8 @@ var Home = exports.Home = {
     var navIcons = document.getElementsByClassName("menu-icon"),
         pages = document.getElementsByClassName("page"),
         profile = document.getElementById("user-icon"),
-        messagesThread = document.getElementById("thread1");
+        messagesThread = document.getElementById("thread1"),
+        helpMenuItem = document.getElementById("help-link");
 
     [].forEach.call(navIcons, function (el) {
       el.addEventListener("click", function (event) {
@@ -144,6 +193,11 @@ var Home = exports.Home = {
       _utils.Utils.gotoPage(_constants.Constants.pages.chat);
     });
 
+    helpMenuItem.addEventListener("click", function () {
+      localStorage.setItem(_constants.Constants.storageKey, "user");
+      _utils.Utils.gotoPage(_constants.Constants.pages.help);
+    });
+
     if (localStorage.getItem(_constants.Constants.storageKey)) {
       var value = localStorage.getItem(_constants.Constants.storageKey);
       document.getElementById(value + "-icon").click();
@@ -151,7 +205,7 @@ var Home = exports.Home = {
   }
 };
 
-},{"./constants":3,"./utils":6}],5:[function(require,module,exports){
+},{"./constants":3,"./utils":7}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -210,7 +264,7 @@ var Index = exports.Index = {
   }
 };
 
-},{"./constants":3,"./utils":6}],6:[function(require,module,exports){
+},{"./constants":3,"./utils":7}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

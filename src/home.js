@@ -6,7 +6,8 @@ export var Home = {
     var navIcons = document.getElementsByClassName("menu-icon"),
     pages = document.getElementsByClassName("page"),
     profile = document.getElementById("user-icon"),
-    messagesThread = document.getElementById("thread1");
+    messagesThread = document.getElementById("thread1"),
+    helpMenuItem = document.getElementById("help-link");
 
     [].forEach.call(navIcons, function(el) {
       el.addEventListener("click", function(event) {
@@ -38,7 +39,6 @@ export var Home = {
       }, 0);
     });
 
-
     function blurListener(event) {
       document.getElementById("home-main").removeEventListener("click", blurListener);
 
@@ -54,6 +54,11 @@ export var Home = {
     messagesThread.addEventListener("click", function() {
       localStorage.setItem(Constants.storageKey, "messages");
       Utils.gotoPage(Constants.pages.chat);
+    });
+
+    helpMenuItem.addEventListener("click", function() {
+      localStorage.setItem(Constants.storageKey, "user");
+      Utils.gotoPage(Constants.pages.help);
     });
 
     if (localStorage.getItem(Constants.storageKey)) {

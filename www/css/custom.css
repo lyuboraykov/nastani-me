@@ -130,6 +130,10 @@ body,
     visibility: hidden;
 }
 
+.no-display {
+    display: none;
+}
+
 #header-bar {
     font-size: 2rem;
     display: -webkit-flex;
@@ -247,7 +251,8 @@ body,
 }
 
 #home-main,
-#chat-main {
+#chat-main,
+#help-main{
     background-color: #fff;
 }
 
@@ -434,12 +439,16 @@ h3 {
     z-index: 1 !important;
 }
 
-#chat-header {
+#help-link {
+    cursor: pointer;
+}
+
+#chat-header, #help-header {
     background-color: #ff5c5f;
     color: #ffffff;
 }
 
-#chat-header .fa {
+#chat-header .fa, #help-header .fa {
     float: left;
     line-height: 1.2em;
 }
@@ -560,4 +569,55 @@ h3 {
 #trips-content .trip > .info > .btn {
     float: right;
     margin-top: -27px;
+}
+
+#help-content .input-search  i {
+    margin-right: 15px;
+}
+
+#help-content .input-search {
+    border-bottom: 1px solid #c2c2c2;
+    margin: 0 5px;
+    padding: 20px 0;
+    text-align: center;
+}
+
+#help-content .input-search input {
+    font-size: 20px;
+    padding: 8px;
+}
+
+#help-content .help-suggestion {
+    border-bottom: 1px solid #c2c2c2;
+    margin: 0 5px;
+    padding: 30px;
+}
+
+#help-content .help-suggestion > span {
+    font-size: 15px;
+    position: absolute;
+    margin-left: 15px;
+    width: calc(100% - 100px);
+}
+
+#help-content #help-suggestion {
+    cursor: pointer;
+}
+
+#help-content #help-answer {
+    padding: 30px;
+}
+
+#help-content #help-answer > h1 {
+    text-align: left;
+}
+
+#help-content #help-answer > h1 > i {
+    margin-right: 20px;
+}
+
+#help-content #help-answer > p {
+    font-size: 18px;
+    margin-top: 30px;
+    text-indent: 15px;
 }

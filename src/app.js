@@ -2,6 +2,7 @@ import {Constants} from './constants';
 import {Index} from './index';
 import {Chat} from './chat';
 import {Home} from './home';
+import {Help} from './help';
 import {Utils} from './utils';
 
 let app = {
@@ -19,6 +20,9 @@ let app = {
         break;
       case Constants.pages.chat:
         Chat.initialize();
+        break;
+      case Constants.pages.help:
+        Help.initialize();
         break;
       default:
         Index.initialize();

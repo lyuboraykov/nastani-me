@@ -7,6 +7,7 @@ export var Constants = {
   pages: {
     home: '/home.html',
     chat: '/chat.html',
+    help: '/help.html',
     index: '/'
   },
 
