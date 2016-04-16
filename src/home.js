@@ -7,7 +7,8 @@ export var Home = {
     pages = document.getElementsByClassName("page"),
     profile = document.getElementById("user-icon"),
     messagesThread = document.getElementById("thread1"),
-    helpMenuItem = document.getElementById("help-link");
+    helpMenuItem = document.getElementById("help-link"),
+    inviteMenuItem = document.getElementById("invite-link");
 
     [].forEach.call(navIcons, function(el) {
       el.addEventListener("click", function(event) {
@@ -59,6 +60,11 @@ export var Home = {
     helpMenuItem.addEventListener("click", function() {
       localStorage.setItem(Constants.storageKey, "user");
       Utils.gotoPage(Constants.pages.help);
+    });
+
+    inviteMenuItem.addEventListener("click", function() {
+      localStorage.setItem(Constants.storageKey, "user");
+      Utils.gotoPage(Constants.pages.invite);
     });
 
     if (localStorage.getItem(Constants.storageKey)) {

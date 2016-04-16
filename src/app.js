@@ -1,5 +1,6 @@
 import {Constants} from './constants';
 import {Index} from './index';
+import {Invite} from './invite';
 import {Chat} from './chat';
 import {Home} from './home';
 import {Help} from './help';
@@ -14,6 +15,9 @@ let app = {
     switch (Utils.getCurrentPage()) {
       case Constants.pages.index:
         Index.initialize();
+        break;
+      case Constants.pages.invite:
+        Invite.initialize();
         break;
       case Constants.pages.home:
         Home.initialize();

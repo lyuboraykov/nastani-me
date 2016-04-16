@@ -5,6 +5,8 @@ var _constants = require('./constants');
 
 var _index = require('./index');
 
+var _invite = require('./invite');
+
 var _chat = require('./chat');
 
 var _home = require('./home');
@@ -21,6 +23,9 @@ var app = {
     switch (_utils.Utils.getCurrentPage()) {
       case _constants.Constants.pages.index:
         _index.Index.initialize();
+        break;
+      case _constants.Constants.pages.invite:
+        _invite.Invite.initialize();
         break;
       case _constants.Constants.pages.home:
         _home.Home.initialize();
@@ -40,7 +45,7 @@ var app = {
 
 app.initialize();
 
-},{"./chat":2,"./constants":3,"./help":4,"./home":5,"./index":6,"./utils":7}],2:[function(require,module,exports){
+},{"./chat":2,"./constants":3,"./help":4,"./home":5,"./index":6,"./invite":7,"./utils":8}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -62,7 +67,7 @@ var Chat = exports.Chat = {
   }
 };
 
-},{"./constants":3,"./utils":7}],3:[function(require,module,exports){
+},{"./constants":3,"./utils":8}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -78,6 +83,7 @@ var Constants = exports.Constants = {
     home: '/home.html',
     chat: '/chat.html',
     help: '/help.html',
+    invite: '/invite.html',
     index: '/'
   },
 
@@ -126,7 +132,7 @@ var Help = exports.Help = {
     }
 };
 
-},{"./constants":3,"./utils":7}],5:[function(require,module,exports){
+},{"./constants":3,"./utils":8}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -144,7 +150,8 @@ var Home = exports.Home = {
         pages = document.getElementsByClassName("page"),
         profile = document.getElementById("user-icon"),
         messagesThread = document.getElementById("thread1"),
-        helpMenuItem = document.getElementById("help-link");
+        helpMenuItem = document.getElementById("help-link"),
+        inviteMenuItem = document.getElementById("invite-link");
 
     [].forEach.call(navIcons, function (el) {
       el.addEventListener("click", function (event) {
@@ -198,6 +205,11 @@ var Home = exports.Home = {
       _utils.Utils.gotoPage(_constants.Constants.pages.help);
     });
 
+    inviteMenuItem.addEventListener("click", function () {
+      localStorage.setItem(_constants.Constants.storageKey, "user");
+      _utils.Utils.gotoPage(_constants.Constants.pages.invite);
+    });
+
     if (localStorage.getItem(_constants.Constants.storageKey)) {
       var value = localStorage.getItem(_constants.Constants.storageKey);
       document.getElementById(value + "-icon").click();
@@ -205,7 +217,7 @@ var Home = exports.Home = {
   }
 };
 
-},{"./constants":3,"./utils":7}],6:[function(require,module,exports){
+},{"./constants":3,"./utils":8}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -264,7 +276,29 @@ var Index = exports.Index = {
   }
 };
 
-},{"./constants":3,"./utils":7}],7:[function(require,module,exports){
+},{"./constants":3,"./utils":8}],7:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Invite = undefined;
+
+var _constants = require('./constants');
+
+var _utils = require('./utils');
+
+var Invite = exports.Invite = {
+  initialize: function initialize() {
+    var backButton = document.getElementById("back-icon");
+
+    backButton.addEventListener("click", function () {
+      _utils.Utils.gotoPage(_constants.Constants.pages.home);
+    });
+  }
+};
+
+},{"./constants":3,"./utils":8}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

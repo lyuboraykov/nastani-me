@@ -2,13 +2,14 @@ html,
 body,
 #main,
 #initial-page,
+#invite-main,
 .full-screen {
     height: 100%;
     width: 100%;
     text-transform: initial;
 }
 
-#main {
+#main, #invite-main {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -52,7 +53,7 @@ body,
     justify-content: space-around;
 }
 
-.login-buttons {
+.login-buttons, .invite-button {
     width: 90%;
     height: 2.5rem;
     font-size: 1.25rem;
@@ -61,6 +62,25 @@ body,
     text-align: center;
     line-height: 2.5rem;
     font-weight: bold;
+}
+
+#invite-section {
+    margin-bottom: 30px;
+}
+
+.invite-friends {
+    margin: 20px 0;
+}
+
+.invite-friends .invite-button {
+    margin: 15px auto;
+}
+
+.invites {
+    font-size: 20px;
+    margin: 15px 0;
+    text-align: center;
+    text-decoration: underline;
 }
 
 .reds {
@@ -83,7 +103,7 @@ body,
     width: 10rem;
 }
 
-#main-header {
+#main-header, #invite-logo {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -439,16 +459,17 @@ h3 {
     z-index: 1 !important;
 }
 
-#help-link {
+#help-link, #invite-link {
     cursor: pointer;
 }
 
-#chat-header, #help-header {
+#chat-header, #help-header, #invite-header {
     background-color: #ff5c5f;
     color: #ffffff;
 }
 
-#chat-header .fa, #help-header .fa {
+#chat-header .fa, #help-header .fa,
+#invite-header .fa {
     float: left;
     line-height: 1.2em;
 }
