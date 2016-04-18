@@ -3,12 +3,13 @@ import {Utils} from './utils';
 
 export var Home = {
   initialize() {
-    var navIcons = document.getElementsByClassName("menu-icon"),
+    let navIcons = document.getElementsByClassName("menu-icon"),
     pages = document.getElementsByClassName("page"),
     profile = document.getElementById("user-icon"),
     messagesThread = document.getElementById("thread1"),
     helpMenuItem = document.getElementById("help-link"),
-    inviteMenuItem = document.getElementById("invite-link");
+    inviteMenuItem = document.getElementById("invite-link"),
+    searchIcon = document.getElementById("search-icon");
 
     [].forEach.call(navIcons, function(el) {
       el.addEventListener("click", function(event) {
@@ -65,6 +66,11 @@ export var Home = {
     inviteMenuItem.addEventListener("click", function() {
       localStorage.setItem(Constants.storageKey, "user");
       Utils.gotoPage(Constants.pages.invite);
+    });
+
+    searchIcon.addEventListener("click", function() {
+      Utils.gotoPage(Constants.pages.search);
+      localStorage.setItem(Constants.storageKey, "home");
     });
 
     if (localStorage.getItem(Constants.storageKey)) {

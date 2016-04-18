@@ -1,0 +1,71 @@
+#search-map {
+  height: 400px;
+  display: block;
+  margin: 0 auto;
+}
+
+.big-button {
+  border-color: #ff5a5f;
+  border-bottom-color: #e00007;
+  background-color: #ff5a5f;
+  color: #fff;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: 14px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  line-height: 1.43;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.centered-button {
+  padding: 0 13px;
+}
+
+#more-filters {
+  display: block;
+  margin: 10px auto;
+  width: 100%;
+}
+
+#search-header {
+  font-size: 16px;
+  padding-top: 20px;
+  padding-right: 12px;
+}
+
+#cancel-button {
+  float: right;
+}
+
+input {
+  font-size: 16px;
+  padding: 0 10px 15px 13px;
+  border: none;
+}
+
+#search-nearby i {
+  color: #ff5a5f;
+  font-size: 22px;
+  float: right;
+  padding-top: 5px;
+}
+
+#search-nearby {
+  padding: 0 15px 10px 15px;
+}
+
+.search-label {
+  font-size: 16px;
+  font-weight: 500;
+}

@@ -3,15 +3,17 @@
 
 var _constants = require('./constants');
 
+var _chat = require('./chat');
+
+var _help = require('./help');
+
+var _home = require('./home');
+
 var _index = require('./index');
 
 var _invite = require('./invite');
 
-var _chat = require('./chat');
-
-var _home = require('./home');
-
-var _help = require('./help');
+var _search = require('./search');
 
 var _utils = require('./utils');
 
@@ -36,6 +38,9 @@ var app = {
       case _constants.Constants.pages.help:
         _help.Help.initialize();
         break;
+      case _constants.Constants.pages.search:
+        _search.Search.initialize();
+        break;
       default:
         _index.Index.initialize();
         break;
@@ -45,7 +50,7 @@ var app = {
 
 app.initialize();
 
-},{"./chat":2,"./constants":3,"./help":4,"./home":5,"./index":6,"./invite":7,"./utils":8}],2:[function(require,module,exports){
+},{"./chat":2,"./constants":3,"./help":4,"./home":5,"./index":6,"./invite":7,"./search":8,"./utils":9}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -67,7 +72,7 @@ var Chat = exports.Chat = {
   }
 };
 
-},{"./constants":3,"./utils":8}],3:[function(require,module,exports){
+},{"./constants":3,"./utils":9}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -84,6 +89,7 @@ var Constants = exports.Constants = {
     chat: '/chat.html',
     help: '/help.html',
     invite: '/invite.html',
+    search: '/search.html',
     index: '/'
   },
 
@@ -132,7 +138,7 @@ var Help = exports.Help = {
     }
 };
 
-},{"./constants":3,"./utils":8}],5:[function(require,module,exports){
+},{"./constants":3,"./utils":9}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -151,7 +157,8 @@ var Home = exports.Home = {
         profile = document.getElementById("user-icon"),
         messagesThread = document.getElementById("thread1"),
         helpMenuItem = document.getElementById("help-link"),
-        inviteMenuItem = document.getElementById("invite-link");
+        inviteMenuItem = document.getElementById("invite-link"),
+        searchIcon = document.getElementById("search-icon");
 
     [].forEach.call(navIcons, function (el) {
       el.addEventListener("click", function (event) {
@@ -210,6 +217,11 @@ var Home = exports.Home = {
       _utils.Utils.gotoPage(_constants.Constants.pages.invite);
     });
 
+    searchIcon.addEventListener("click", function () {
+      _utils.Utils.gotoPage(_constants.Constants.pages.search);
+      localStorage.setItem(_constants.Constants.storageKey, "home");
+    });
+
     if (localStorage.getItem(_constants.Constants.storageKey)) {
       var value = localStorage.getItem(_constants.Constants.storageKey);
       document.getElementById(value + "-icon").click();
@@ -217,7 +229,7 @@ var Home = exports.Home = {
   }
 };
 
-},{"./constants":3,"./utils":8}],6:[function(require,module,exports){
+},{"./constants":3,"./utils":9}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -276,7 +288,7 @@ var Index = exports.Index = {
   }
 };
 
-},{"./constants":3,"./utils":8}],7:[function(require,module,exports){
+},{"./constants":3,"./utils":9}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -298,7 +310,29 @@ var Invite = exports.Invite = {
   }
 };
 
-},{"./constants":3,"./utils":8}],8:[function(require,module,exports){
+},{"./constants":3,"./utils":9}],8:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Search = undefined;
+
+var _constants = require('./constants');
+
+var _utils = require('./utils');
+
+var Search = exports.Search = {
+  initialize: function initialize() {
+    var backButton = document.getElementById("back-icon");
+
+    backButton.addEventListener("click", function () {
+      _utils.Utils.gotoPage(_constants.Constants.pages.home);
+    });
+  }
+};
+
+},{"./constants":3,"./utils":9}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
