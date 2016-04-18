@@ -9,6 +9,7 @@ export var Constants = {
     chat: '/chat.html',
     help: '/help.html',
     invite: '/invite.html',
+    search: '/search.html',
     index: '/'
   },
 

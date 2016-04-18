@@ -1,9 +1,10 @@
 import {Constants} from './constants';
+import {Chat} from './chat';
+import {Help} from './help';
+import {Home} from './home';
 import {Index} from './index';
 import {Invite} from './invite';
-import {Chat} from './chat';
-import {Home} from './home';
-import {Help} from './help';
+import {Search} from './search';
 import {Utils} from './utils';
 
 let app = {
@@ -27,6 +28,9 @@ let app = {
         break;
       case Constants.pages.help:
         Help.initialize();
+        break;
+      case Constants.pages.search:
+        Search.initialize();
         break;
       default:
         Index.initialize();

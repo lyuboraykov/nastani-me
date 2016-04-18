@@ -3,7 +3,7 @@ import {Utils} from './utils';
 
 export var Home = {
   initialize() {
-    var navIcons = document.getElementsByClassName("menu-icon"),
+    let navIcons = document.getElementsByClassName("menu-icon"),
     pages = document.getElementsByClassName("page"),
     profile = document.getElementById("user-icon"),
     messagesThread = document.getElementById("thread1"),
@@ -11,7 +11,8 @@ export var Home = {
     inviteMenuItem = document.getElementById("invite-link"),
     placeDetailsIcons = document.querySelectorAll(".place-preview > i"),
     detailsBack = document.getElementById("details-back"),
-    swipeBackPages = document.getElementsByClassName("swipe-back");
+    swipeBackPages = document.getElementsByClassName("swipe-back"),
+    searchIcon = document.getElementById("search-icon");
 
     [].forEach.call(navIcons, function(el) {
       el.addEventListener("touchstart", function(event) {
@@ -44,16 +45,6 @@ export var Home = {
         document.getElementById("place-details").classList.add("bigger-index");
         document.getElementById("animate-details").classList.add("details-animation");
       });
-    });
-
-    [].forEach.call(swipeBackPages, function(el) {
-      el.addEventListener("touchstart", function() {
-
-      });
-
-      el.addEventListener("touchmove", function(event) {
-        debugger;
-      })
     });
 
     detailsBack.addEventListener("touchstart", function() {
@@ -101,6 +92,11 @@ export var Home = {
     inviteMenuItem.addEventListener("touchstart", function() {
       localStorage.setItem(Constants.storageKey, "user");
       Utils.gotoPage(Constants.pages.invite);
+    });
+
+    searchIcon.addEventListener("click", function() {
+      Utils.gotoPage(Constants.pages.search);
+      localStorage.setItem(Constants.storageKey, "home");
     });
 
     if (localStorage.getItem(Constants.storageKey)) {

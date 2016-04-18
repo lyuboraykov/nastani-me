@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <link rel="stylesheet" type="text/css" href="css/search.css" />
+    <title>Nastani.me</title>
+</head>
+
+<body>
+    <main class="full-screen" id="home-main">
+        <header id="chat-header">
+            <h1 class="headings-h1">
+                <i class="menu-icon fa fa-1x fa-arrow-left" id="back-icon"></i>
+                Search
+            </h1>
+        </header>
+        <header id="search-header">
+            <input placeholder="Where are you going?" />
+            <span id="cancel-button">Cancel</span>
+        </header>
+        <section id="search-nearby">
+            <i class="fa fa-location-arrow" aria-hidden="true"></i>
+            <div>
+                <div class="search-label">Search Nearby</div>
+                <div class="location-label">San Francisco, United States</div>
+            </div>
+        </section>
+        <img src="/img/map.png" id="search-map" />
+        <div class="centered-button">
+            <button class="big-button" id="more-filters">More Filters</button>
+        </div>
+    </main>
+    <aside id="user-menu">
+        <div id="animate-child">
+            <div id="aside-picture">
+            </div>
+            <nav id="aside-navigation">
+                <ul class="aside-list">
+                    <li>Settings</li>
+                    <li>List your places</li>
+                    <li id="invite-link">Invite friends</li>
+                    <li>Log out</li>
+                    <li id="help-link">Help</li>
+                </ul>
+            </nav>
+            <footer id="aside-footer">
+            </footer>
+        </div>
+    </aside>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/bundle.js"></script>
+</body>
+
+</html>
