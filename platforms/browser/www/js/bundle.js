@@ -151,10 +151,13 @@ var Home = exports.Home = {
         profile = document.getElementById("user-icon"),
         messagesThread = document.getElementById("thread1"),
         helpMenuItem = document.getElementById("help-link"),
-        inviteMenuItem = document.getElementById("invite-link");
+        inviteMenuItem = document.getElementById("invite-link"),
+        placeDetailsIcons = document.querySelectorAll(".place-preview > i"),
+        detailsBack = document.getElementById("details-back"),
+        swipeBackPages = document.getElementsByClassName("swipe-back");
 
     [].forEach.call(navIcons, function (el) {
-      el.addEventListener("click", function (event) {
+      el.addEventListener("touchstart", function (event) {
         if (event.target.id === "user-icon") {
           return;
         }
@@ -163,7 +166,8 @@ var Home = exports.Home = {
           page.classList.add("hidden");
         });
         document.getElementById(this.id.split("-")[0]).classList.remove("hidden");
-
+        document.getElementById("place-details").classList.remove("bigger-index");
+        document.getElementById("animate-details").classList.remove("details-animation");
         document.getElementsByClassName("reds-clicked")[0].classList.remove("reds-clicked");
         this.classList.add("reds-clicked");
 
@@ -173,18 +177,46 @@ var Home = exports.Home = {
       });
     });
 
-    profile.addEventListener("click", function () {
+    [].forEach.call(placeDetailsIcons, function (el) {
+      el.addEventListener("touchstart", function (event) {
+        var element = this.parentElement.parentElement.getElementsByClassName("place-location")[0],
+            heading = document.getElementsByClassName("details-h1")[0];
+
+        heading.innerText = element.innerText;
+
+        document.getElementById("place-details").classList.add("bigger-index");
+        document.getElementById("animate-details").classList.add("details-animation");
+      });
+    });
+
+    [].forEach.call(swipeBackPages, function (el) {
+      el.addEventListener("touchstart", function () {});
+
+      el.addEventListener("touchmove", function (event) {
+        debugger;
+      });
+    });
+
+    detailsBack.addEventListener("touchstart", function () {
+      document.getElementById("animate-details").classList.remove("details-animation");
+      // hacking the DOM is good skill to have
+      setTimeout(function () {
+        document.getElementById("place-details").classList.remove("bigger-index");
+      }, 500);
+    });
+
+    profile.addEventListener("touchstart", function () {
       document.getElementById("animate-child").classList.add("animate-user");
       document.getElementById("home-main").classList.add("blur-page");
       document.getElementById("user-menu").classList.add("bigger-index");
 
       setTimeout(function () {
-        document.getElementById("home-main").addEventListener("click", blurListener);
+        document.getElementById("home-main").addEventListener("touchstart", blurListener);
       }, 0);
     });
 
     function blurListener(event) {
-      document.getElementById("home-main").removeEventListener("click", blurListener);
+      document.getElementById("home-main").removeEventListener("touchstart", blurListener);
 
       if (event.target.id !== "user-menu") {
         document.getElementById("animate-child").classList.remove("animate-user");
@@ -195,17 +227,17 @@ var Home = exports.Home = {
       }
     }
 
-    messagesThread.addEventListener("click", function () {
+    messagesThread.addEventListener("touchstart", function () {
       localStorage.setItem(_constants.Constants.storageKey, "messages");
       _utils.Utils.gotoPage(_constants.Constants.pages.chat);
     });
 
-    helpMenuItem.addEventListener("click", function () {
+    helpMenuItem.addEventListener("touchstart", function () {
       localStorage.setItem(_constants.Constants.storageKey, "user");
       _utils.Utils.gotoPage(_constants.Constants.pages.help);
     });
 
-    inviteMenuItem.addEventListener("click", function () {
+    inviteMenuItem.addEventListener("touchstart", function () {
       localStorage.setItem(_constants.Constants.storageKey, "user");
       _utils.Utils.gotoPage(_constants.Constants.pages.invite);
     });

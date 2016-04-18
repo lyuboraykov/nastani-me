@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
@@ -30,33 +31,109 @@
             <section id="places-content">
                 <div class="place">
                     <div class="place-type">
-                        <i class="menu-icon fa fa-3x fa-clone"></i>
+                        <i class="fa fa-3x fa-clone"></i>
                     </div>
                     <div class="place-location">Apartment, Gabrovo, Bulgaria</div>
                     <div class="place-preview">
-                        <i class="menu-icon fa fa-3x fa-arrow-right"></i>
+                        <i class="fa fa-3x fa-arrow-right"></i>
                     </div>
                 </div>
                 <div class="place">
                     <div class="place-type">
-                        <i class="menu-icon fa fa-3x fa-bullhorn"></i>
+                        <i class="fa fa-3x fa-bullhorn"></i>
                     </div>
                     <div class="place-location">Bed and Breakfast, Dryanovo, Bulgaria</div>
                     <div class="place-preview">
-                        <i class="menu-icon fa fa-3x fa-arrow-right"></i>
+                        <i class="fa fa-3x fa-arrow-right"></i>
                     </div>
                 </div>
                 <div class="place">
                     <div class="place-type">
-                        <i class="menu-icon fa fa-3x fa-home"></i>
+                        <i class="fa fa-3x fa-home"></i>
                     </div>
                     <div class="place-location">House, Veliko Tyrnovo, Bulgaria</div>
                     <div class="place-preview">
-                        <i class="menu-icon fa fa-3x fa-arrow-right"></i>
+                        <i class="fa fa-3x fa-arrow-right"></i>
                     </div>
                 </div>
             </section>
         </div>
+        <aside id="place-details" class="swipe-back">
+            <div id="animate-details">
+                <header id="chat-header">
+                    <i class="fa fa-3x fa-arrow-left" id="details-back"></i>
+                    <h1 class="headings-h1 details-h1">Some header</h1>
+                </header>
+                <section class="details">
+                    <header>
+                        <h2 class="lvl2-heading">6 Reviews</h2>
+                        <div id="stars">
+                            <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                        </div>
+                    </header>
+                    <section id="reviews">
+                        <ul id="criteria">
+                            <li>Correctness</li>
+                            <li>Location</li>
+                            <li>Purity</li>
+                            <li>$$$</li>
+                        </ul>
+                        <ul id="ranking">
+                            <li> <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i></li>
+                            <li> <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i></li>
+                            <li> <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i></li>
+                            <li> <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i></li>
+                        </ul>
+                    </section>
+                    <section id="comments">
+                        <section class="comment">
+                            <header class="comments-header">
+                                <div class="user-image"></div>
+                                <div class="user-info">
+                                    <span>Ivan Ivanov</span>
+                                    <span>March 2016</span>
+                                </div>
+                            </header>
+                            <article class="text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </article>
+                        </section>
+                        <section class="comment">
+                            <header class="comments-header">
+                                <div class="user-image other-image"></div>
+                                <div class="user-info">
+                                    <span>Lyubomir Raykov</span>
+                                    <span>May 2015</span>
+                                </div>
+                            </header>
+                            <article class="text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </article>
+                        </section>
+                    </section>
+                </section>
+            </div>
+        </aside>
         <div id="messages" class="page hidden">
             <header id="messages-header" class="page-header">
                 <h1 class="headings-h1">Messages</h1>
@@ -141,4 +218,5 @@
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/bundle.js"></script>
 </body>
+
 </html>
