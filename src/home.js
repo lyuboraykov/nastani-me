@@ -46,6 +46,7 @@ export var Home = {
         document.getElementById("animate-details").classList.add("details-animation");
       });
     });
+    
 
     detailsBack.addEventListener("touchstart", function() {
       document.getElementById("animate-details").classList.remove("details-animation");

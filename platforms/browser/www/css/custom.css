@@ -388,6 +388,7 @@ body,
 .headings-h1 {
     font-size: 250%;
     padding: 5%;
+    flex-grow: 1;
 }
 
 h3 {
@@ -467,7 +468,7 @@ h3 {
     cursor: pointer;
 }
 
-#chat-header,
+.chat-header,
 #details-header,
 #help-header,
 #invite-header {

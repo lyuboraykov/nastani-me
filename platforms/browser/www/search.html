@@ -13,45 +13,79 @@
 </head>
 
 <body>
-    <main class="full-screen" id="home-main">
-        <header id="chat-header">
-            <h1 class="headings-h1">
-                <i class="menu-icon fa fa-1x fa-arrow-left" id="back-icon"></i>
-                Search
-            </h1>
+    <main class="full-screen">
+        <header class="chat-header">
+            <i class="menu-icon fa fa-3x fa-arrow-left" id="back-icon"></i>
+            <h1 class="headings-h1">Search</h1>
+            <i class="fa fa-3x fa-map-marker" aria-hidden="true"></i>
         </header>
-        <header id="search-header">
-            <input placeholder="Where are you going?" />
-            <span id="cancel-button">Cancel</span>
-        </header>
-        <section id="search-nearby">
-            <i class="fa fa-location-arrow" aria-hidden="true"></i>
-            <div>
-                <div class="search-label">Search Nearby</div>
-                <div class="location-label">San Francisco, United States</div>
-            </div>
+        <section class="search-section">
+            <header id="search-header">
+                <input id="searchfield" placeholder="Where are you going?" />
+                <span id="cancel-button">Cancel</span>
+            </header>
+            <section id="map-section">
+                <section id="search-nearby">
+                    <div>
+                        <div class="search-label">Search Nearby</div>
+                        <div class="location-label">San Francisco, United States</div>
+                    </div>
+                    <i class="fa fa-location-arrow" aria-hidden="true"></i>
+                </section>
+                <div class="separator"></div>
+                <div id="search-map"></div>
+                <button class="big-button" class="more-filters">More Filters</button>
+            </section>
         </section>
-        <img src="/img/map.png" id="search-map" />
-        <div class="centered-button">
-            <button class="big-button" id="more-filters">More Filters</button>
-        </div>
     </main>
-    <aside id="user-menu">
-        <div id="animate-child">
-            <div id="aside-picture">
-            </div>
-            <nav id="aside-navigation">
-                <ul class="aside-list">
-                    <li>Settings</li>
-                    <li>List your places</li>
-                    <li id="invite-link">Invite friends</li>
-                    <li>Log out</li>
-                    <li id="help-link">Help</li>
-                </ul>
-            </nav>
-            <footer id="aside-footer">
-            </footer>
-        </div>
+    <aside id="search-details" class="full-screen">
+        <header class="chat-header">
+            <i class="menu-icon fa fa-3x fa-arrow-left"></i>
+            <h1 class="headings-h1">London</h1>
+            <i class="fa fa-3x fa-map-marker" aria-hidden="true"></i>
+        </header>
+        <section class="search-section search-details-section">
+            <section class="date-picker">
+                <div class="check-inputs">
+                    <span>Check In</span>
+                    <input type="date" class="picker">
+                </div>
+                <hr>
+                <div class="check-inputs">
+                    <span>Check out</span>
+                    <input type="date" class="picker">
+                </div>
+            </section>
+            <button class="big-button more-filters">More Filters</button>
+            <section class="post">
+                <div class="post-image"></div>
+                <div class="post-description">
+                    <h2>Stylish and Cozy flat</h2>
+                    <span class="mini-description">Entire home</span>
+                    <div class="stars">
+                        <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </section>
+            <section class="post">
+                <div class="post-image"></div>
+                <div class="post-description">
+                    <h2>Stylish and Cozy flat</h2>
+                    <span class="mini-description">Entire home</span>
+                    <div class="stars">
+                        <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </section>
+        </section>
     </aside>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/bundle.js"></script>

@@ -196,14 +196,6 @@ var Home = exports.Home = {
       });
     });
 
-    [].forEach.call(swipeBackPages, function (el) {
-      el.addEventListener("touchstart", function () {});
-
-      el.addEventListener("touchmove", function (event) {
-        debugger;
-      });
-    });
-
     detailsBack.addEventListener("touchstart", function () {
       document.getElementById("animate-details").classList.remove("details-animation");
       // hacking the DOM is good skill to have
@@ -356,10 +348,19 @@ var _utils = require('./utils');
 
 var Search = exports.Search = {
   initialize: function initialize() {
-    var backButton = document.getElementById("back-icon");
+    var backButton = document.getElementById("back-icon"),
+        searchfield = document.getElementById("searchfield");
 
     backButton.addEventListener("click", function () {
       _utils.Utils.gotoPage(_constants.Constants.pages.home);
+    });
+
+    searchfield.addEventListener("input", function (event) {
+      var value = event.target.value;
+
+      if (value.toUpperCase() === "LONDON") {
+        alert("hello");
+      }
     });
   }
 };
