@@ -5,6 +5,7 @@ import {Home} from './home';
 import {Index} from './index';
 import {Invite} from './invite';
 import {Search} from './search';
+import {Profile} from './profile';
 import {Utils} from './utils';
 
 let app = {
@@ -31,6 +32,9 @@ let app = {
         break;
       case Constants.pages.search:
         Search.initialize();
+        break;
+      case Constants.pages.profile:
+        Profile.initialize();
         break;
       default:
         Index.initialize();

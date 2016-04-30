@@ -7,6 +7,7 @@ export var Home = {
     pages = document.getElementsByClassName("page"),
     profile = document.getElementById("user-icon"),
     messagesThread = document.getElementById("thread1"),
+    profileMenuItem = document.getElementById("profile-link"),
     helpMenuItem = document.getElementById("help-link"),
     inviteMenuItem = document.getElementById("invite-link"),
     placeDetailsIcons = document.querySelectorAll(".place-preview > i"),
@@ -38,7 +39,7 @@ export var Home = {
     [].forEach.call(placeDetailsIcons, function(el) {
       el.addEventListener("touchstart", function(event) {
         var element = this.parentElement.parentElement.getElementsByClassName("place-location")[0],
-          heading = document.getElementsByClassName("details-h1")[0];
+            heading = document.getElementsByClassName("details-h1")[0];
 
         heading.innerText = element.innerText;
 
@@ -46,7 +47,6 @@ export var Home = {
         document.getElementById("animate-details").classList.add("details-animation");
       });
     });
-    
 
     detailsBack.addEventListener("touchstart", function() {
       document.getElementById("animate-details").classList.remove("details-animation");
@@ -66,8 +66,6 @@ export var Home = {
       }, 0);
     });
 
-
-
     function blurListener(event) {
       document.getElementById("home-main").removeEventListener("touchstart", blurListener);
 
@@ -83,6 +81,11 @@ export var Home = {
     messagesThread.addEventListener("touchstart", function() {
       localStorage.setItem(Constants.storageKey, "messages");
       Utils.gotoPage(Constants.pages.chat);
+    });
+
+    profileMenuItem.addEventListener("touchstart", function() {
+      localStorage.setItem(Constants.storageKey, "user");
+      Utils.gotoPage(Constants.pages.profile);
     });
 
     helpMenuItem.addEventListener("touchstart", function() {

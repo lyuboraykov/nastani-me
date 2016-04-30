@@ -23,5 +23,5 @@ phonegap serve  # in another
 Inclusive: mockup #:
     1 - 6,
     8 - 11,
-    13 - 16,
-    21, 22, 26, 27, 29
+    14 - 16,
+    21, 22, 29

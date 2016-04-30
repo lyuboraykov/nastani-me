@@ -10,6 +10,7 @@ export var Constants = {
     help: '/help.html',
     invite: '/invite.html',
     search: '/search.html',
+    profile: '/profile.html',
     index: '/'
   },
 

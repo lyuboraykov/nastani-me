@@ -15,6 +15,8 @@ var _invite = require('./invite');
 
 var _search = require('./search');
 
+var _profile = require('./profile');
+
 var _utils = require('./utils');
 
 var app = {
@@ -41,6 +43,9 @@ var app = {
       case _constants.Constants.pages.search:
         _search.Search.initialize();
         break;
+      case _constants.Constants.pages.profile:
+        _profile.Profile.initialize();
+        break;
       default:
         _index.Index.initialize();
         break;
@@ -50,7 +55,7 @@ var app = {
 
 app.initialize();
 
-},{"./chat":2,"./constants":3,"./help":4,"./home":5,"./index":6,"./invite":7,"./search":8,"./utils":9}],2:[function(require,module,exports){
+},{"./chat":2,"./constants":3,"./help":4,"./home":5,"./index":6,"./invite":7,"./profile":8,"./search":9,"./utils":10}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -72,7 +77,7 @@ var Chat = exports.Chat = {
   }
 };
 
-},{"./constants":3,"./utils":9}],3:[function(require,module,exports){
+},{"./constants":3,"./utils":10}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -90,6 +95,7 @@ var Constants = exports.Constants = {
     help: '/help.html',
     invite: '/invite.html',
     search: '/search.html',
+    profile: '/profile.html',
     index: '/'
   },
 
@@ -138,7 +144,7 @@ var Help = exports.Help = {
     }
 };
 
-},{"./constants":3,"./utils":9}],5:[function(require,module,exports){
+},{"./constants":3,"./utils":10}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -156,6 +162,7 @@ var Home = exports.Home = {
         pages = document.getElementsByClassName("page"),
         profile = document.getElementById("user-icon"),
         messagesThread = document.getElementById("thread1"),
+        profileMenuItem = document.getElementById("profile-link"),
         helpMenuItem = document.getElementById("help-link"),
         inviteMenuItem = document.getElementById("invite-link"),
         placeDetailsIcons = document.querySelectorAll(".place-preview > i"),
@@ -231,6 +238,11 @@ var Home = exports.Home = {
       _utils.Utils.gotoPage(_constants.Constants.pages.chat);
     });
 
+    profileMenuItem.addEventListener("touchstart", function () {
+      localStorage.setItem(_constants.Constants.storageKey, "user");
+      _utils.Utils.gotoPage(_constants.Constants.pages.profile);
+    });
+
     helpMenuItem.addEventListener("touchstart", function () {
       localStorage.setItem(_constants.Constants.storageKey, "user");
       _utils.Utils.gotoPage(_constants.Constants.pages.help);
@@ -253,7 +265,7 @@ var Home = exports.Home = {
   }
 };
 
-},{"./constants":3,"./utils":9}],6:[function(require,module,exports){
+},{"./constants":3,"./utils":10}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -312,7 +324,7 @@ var Index = exports.Index = {
   }
 };
 
-},{"./constants":3,"./utils":9}],7:[function(require,module,exports){
+},{"./constants":3,"./utils":10}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -334,7 +346,51 @@ var Invite = exports.Invite = {
   }
 };
 
-},{"./constants":3,"./utils":9}],8:[function(require,module,exports){
+},{"./constants":3,"./utils":10}],8:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Profile = undefined;
+
+var _constants = require('./constants');
+
+var _utils = require('./utils');
+
+var Profile = exports.Profile = {
+    initialize: function initialize() {
+        var backButton = document.getElementById("back-icon"),
+            backEditButton = document.getElementById("back-edit-icon"),
+            editButton = document.getElementById("edit-icon"),
+            content = document.getElementById("profile-content"),
+            edit = document.getElementById("profile-edit"),
+            headerMain = document.getElementById("profile-header-main"),
+            headerEdit = document.getElementById("profile-header-edit");
+
+        backButton.addEventListener("click", function () {
+            _utils.Utils.gotoPage(_constants.Constants.pages.home);
+        });
+
+        editButton.addEventListener("click", function () {
+            edit.classList.remove("no-display");
+            content.classList.add("no-display");
+
+            headerMain.classList.add("no-display");
+            headerEdit.classList.remove("no-display");
+        });
+
+        backEditButton.addEventListener("click", function () {
+            edit.classList.add("no-display");
+            content.classList.remove("no-display");
+
+            headerMain.classList.remove("no-display");
+            headerEdit.classList.add("no-display");
+        });
+    }
+};
+
+},{"./constants":3,"./utils":10}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -365,7 +421,7 @@ var Search = exports.Search = {
   }
 };
 
-},{"./constants":3,"./utils":9}],9:[function(require,module,exports){
+},{"./constants":3,"./utils":10}],10:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
