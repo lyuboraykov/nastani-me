@@ -8,6 +8,7 @@ export var Home = {
     profile = document.getElementById("user-icon"),
     messagesThread = document.getElementById("thread1"),
     profileMenuItem = document.getElementById("profile-link"),
+    listingMenuItem = document.getElementById("listing-link"),
     helpMenuItem = document.getElementById("help-link"),
     inviteMenuItem = document.getElementById("invite-link"),
     placeDetailsIcons = document.querySelectorAll(".place-preview > i"),
@@ -86,6 +87,11 @@ export var Home = {
     profileMenuItem.addEventListener("touchstart", function() {
       localStorage.setItem(Constants.storageKey, "user");
       Utils.gotoPage(Constants.pages.profile);
+    });
+
+    listingMenuItem.addEventListener("touchstart", function() {
+      localStorage.setItem(Constants.storageKey, "user");
+      Utils.gotoPage(Constants.pages.listing);
     });
 
     helpMenuItem.addEventListener("touchstart", function() {

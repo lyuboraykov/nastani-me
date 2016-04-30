@@ -11,6 +11,7 @@ export var Constants = {
     invite: '/invite.html',
     search: '/search.html',
     profile: '/profile.html',
+    listing: '/listing.html',
     index: '/'
   },
 

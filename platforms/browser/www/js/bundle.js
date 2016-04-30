@@ -17,6 +17,8 @@ var _search = require('./search');
 
 var _profile = require('./profile');
 
+var _listing = require('./listing');
+
 var _utils = require('./utils');
 
 var app = {
@@ -46,6 +48,9 @@ var app = {
       case _constants.Constants.pages.profile:
         _profile.Profile.initialize();
         break;
+      case _constants.Constants.pages.listing:
+        _listing.Listing.initialize();
+        break;
       default:
         _index.Index.initialize();
         break;
@@ -55,7 +60,7 @@ var app = {
 
 app.initialize();
 
-},{"./chat":2,"./constants":3,"./help":4,"./home":5,"./index":6,"./invite":7,"./profile":8,"./search":9,"./utils":10}],2:[function(require,module,exports){
+},{"./chat":2,"./constants":3,"./help":4,"./home":5,"./index":6,"./invite":7,"./listing":8,"./profile":9,"./search":10,"./utils":11}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -77,7 +82,7 @@ var Chat = exports.Chat = {
   }
 };
 
-},{"./constants":3,"./utils":10}],3:[function(require,module,exports){
+},{"./constants":3,"./utils":11}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -96,6 +101,7 @@ var Constants = exports.Constants = {
     invite: '/invite.html',
     search: '/search.html',
     profile: '/profile.html',
+    listing: '/listing.html',
     index: '/'
   },
 
@@ -144,7 +150,7 @@ var Help = exports.Help = {
     }
 };
 
-},{"./constants":3,"./utils":10}],5:[function(require,module,exports){
+},{"./constants":3,"./utils":11}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -163,6 +169,7 @@ var Home = exports.Home = {
         profile = document.getElementById("user-icon"),
         messagesThread = document.getElementById("thread1"),
         profileMenuItem = document.getElementById("profile-link"),
+        listingMenuItem = document.getElementById("listing-link"),
         helpMenuItem = document.getElementById("help-link"),
         inviteMenuItem = document.getElementById("invite-link"),
         placeDetailsIcons = document.querySelectorAll(".place-preview > i"),
@@ -243,6 +250,11 @@ var Home = exports.Home = {
       _utils.Utils.gotoPage(_constants.Constants.pages.profile);
     });
 
+    listingMenuItem.addEventListener("touchstart", function () {
+      localStorage.setItem(_constants.Constants.storageKey, "user");
+      _utils.Utils.gotoPage(_constants.Constants.pages.listing);
+    });
+
     helpMenuItem.addEventListener("touchstart", function () {
       localStorage.setItem(_constants.Constants.storageKey, "user");
       _utils.Utils.gotoPage(_constants.Constants.pages.help);
@@ -265,7 +277,7 @@ var Home = exports.Home = {
   }
 };
 
-},{"./constants":3,"./utils":10}],6:[function(require,module,exports){
+},{"./constants":3,"./utils":11}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -324,7 +336,7 @@ var Index = exports.Index = {
   }
 };
 
-},{"./constants":3,"./utils":10}],7:[function(require,module,exports){
+},{"./constants":3,"./utils":11}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -346,7 +358,86 @@ var Invite = exports.Invite = {
   }
 };
 
-},{"./constants":3,"./utils":10}],8:[function(require,module,exports){
+},{"./constants":3,"./utils":11}],8:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Listing = undefined;
+
+var _constants = require('./constants');
+
+var _utils = require('./utils');
+
+var Listing = exports.Listing = {
+    initialize: function initialize() {
+        var backButton = document.getElementById("back-icon"),
+            step1Opts = document.getElementsByClassName("step1opt"),
+            step2Opts = document.getElementsByClassName("step2opt"),
+            next = document.getElementById("listing-next"),
+            publish = document.getElementById("listing-publish"),
+            currentStep = 1;
+
+        function gotoStep(n) {
+            var header = document.getElementById("listing-h1"),
+                title = header.children[header.children.length - 1];
+            if (n === 1) {
+                title.innerHTML = "List your space";
+            } else if (n === 2) {
+                title.innerHTML = "Property type";
+            } else if (n === 3) {
+                title.innerHTML = "Location";
+            } else if (n === 4) {
+                title.innerHTML = "Rooms & beds";
+            }
+
+            for (var i = 1; i < 5; i++) {
+                var step = document.getElementById("listing-step-" + i.toString());
+                if (i === n) {
+                    step.classList.remove("no-display");
+                } else {
+                    step.classList.add("no-display");
+                }
+            }
+            currentStep = n;
+        }
+
+        backButton.addEventListener("click", function () {
+            if (currentStep === 1) {
+                _utils.Utils.gotoPage(_constants.Constants.pages.home);
+            } else {
+                gotoStep(currentStep - 1);
+            }
+        });
+
+        [].forEach.call(step1Opts, function (el) {
+            el.addEventListener("click", function (event) {
+                var name = this.children[this.children.length - 1].innerHTML.toLowerCase(),
+                    question2 = document.getElementById("q2");
+                question2.innerHTML = "<h1>What type of place is your " + name + " in?</h1>";
+                gotoStep(2);
+            });
+        });
+
+        [].forEach.call(step2Opts, function (el) {
+            el.addEventListener("click", function (event) {
+                gotoStep(3);
+            });
+        });
+
+        next.addEventListener("click", function () {
+            gotoStep(4);
+        });
+
+        publish.addEventListener("click", function () {
+            gotoStep(1);
+            _utils.Utils.gotoPage(_constants.Constants.pages.home);
+        });
+    }
+};
+
+},{"./constants":3,"./utils":11}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -390,7 +481,7 @@ var Profile = exports.Profile = {
     }
 };
 
-},{"./constants":3,"./utils":10}],9:[function(require,module,exports){
+},{"./constants":3,"./utils":11}],10:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -421,7 +512,7 @@ var Search = exports.Search = {
   }
 };
 
-},{"./constants":3,"./utils":10}],10:[function(require,module,exports){
+},{"./constants":3,"./utils":11}],11:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

@@ -276,7 +276,8 @@ body,
 #home-main,
 #chat-main,
 #help-main,
-#profile-main {
+#profile-main,
+#listing-main {
     background-color: #fff;
 }
 
@@ -465,6 +466,7 @@ h3 {
 }
 
 #profile-link,
+#listing-link,
 #help-link,
 #invite-link {
     cursor: pointer;
@@ -475,7 +477,8 @@ h3 {
 #details-header,
 #help-header,
 #invite-header,
-#profile-header {
+#profile-header,
+#listing-header {
     height: 12%;
     background-color: #ff5c5f;
     color: #ffffff;
@@ -488,7 +491,8 @@ h3 {
 #details-header .fa,
 #help-header .fa,
 #invite-header .fa,
-#profile-header .fa {
+#profile-header .fa,
+#listing-header .fa {
     float: left;
     line-height: 1.2em;
 }
@@ -877,4 +881,142 @@ h3 {
     margin: 0;
     width: 40%;
     min-width: 150px;
+}
+
+.listing-content {
+    height: calc(100% - 80px);
+}
+
+.listing-content .question {
+    background-color: #f0f0f0;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.listing-content .question.small {
+    height: 140px;
+}
+
+.listing-content .question h1 {
+    color: #838383;
+    font-weight: bold;
+    width: 80%;
+}
+
+.listing-content .search-box {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.listing-content .search-box input {
+    font-size: 20px;
+    padding: 5px;
+    width: 80%;
+    min-width: 100px;
+}
+
+.listing-content .search-box .fa {
+    margin-left: 5px;
+}
+
+.listing-content button {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.listing-content .options {
+    border-top: 1px solid #c2c2c2;
+    height: 50%;
+}
+
+.listing-content .options .option {
+    border-bottom: 1px solid #c2c2c2;
+    font-size: 24px;
+    height: 15%;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.listing-content .options .option .fa {
+    margin-right: 15px;
+}
+
+.listing-content .numbers {
+    border: 1px solid #c2c2c2;
+    font-size: 20px;
+    margin: 15px auto;
+    margin-top: 30px;
+    width: 80%;
+}
+
+.listing-content .numbers div {
+    margin: 20px;
+    padding-left: 20px;
+}
+
+.listing-content .numbers input {
+    font-size: 20px;
+    margin-right: 10px;
+    width: 50px;
+}
+
+.listing-content .photos,
+.listing-content .amenities {
+    text-align: center;
+}
+
+.listing-content .photos .fa {
+    margin: 10px;
+}
+
+.listing-content .photos #add-photo {
+    color: #ff5c5f;
+    cursor: pointer;
+}
+
+.listing-content .amenities input {
+    font-size: 20px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    padding: 5px;
+    width: 85%;
+}
+
+#listing-map {
+    display: block;
+    margin: 0 auto;
+    background-image: url("../img/map1.png");
+    background-size: cover;
+    width: 100%;
+    height: 50%;
+    margin-bottom: 10px;
+}
+
+.big-button {
+    border-color: #ff5a5f;
+    border-bottom-color: #e00007;
+    background-color: #ff5a5f;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    border: 1px solid;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    line-height: 1.43;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+    cursor: pointer;
+    height: 7%;
 }
