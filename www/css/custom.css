@@ -471,6 +471,7 @@ h3 {
 }
 
 #chat-header,
+#search-header,
 #details-header,
 #help-header,
 #invite-header,
@@ -483,6 +484,7 @@ h3 {
 }
 
 #chat-header .fa,
+#search-header .fa,
 #details-header .fa,
 #help-header .fa,
 #invite-header .fa,
@@ -497,6 +499,10 @@ h3 {
 
 #profile-header #edit-icon,
 #profile-header #save-icon {
+    float: right;
+}
+
+#search-header #map-icon {
     float: right;
 }
 
