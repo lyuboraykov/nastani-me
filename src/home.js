@@ -40,16 +40,19 @@ export var Home = {
     [].forEach.call(placeDetailsIcons, function(el) {
       el.addEventListener("touchstart", function(event) {
         var element = this.parentElement.parentElement.getElementsByClassName("place-location")[0],
-            heading = document.getElementsByClassName("details-h1")[0];
+            heading = document.getElementsByClassName("details-h1")[0],
+            icon = heading.getElementsByTagName("i")[0];
 
-        heading.innerText = element.innerText;
+        heading.innerHTML = "";
+        heading.appendChild(icon);
+        heading.innerHTML += element.textContent;
 
         document.getElementById("place-details").classList.add("bigger-index");
         document.getElementById("animate-details").classList.add("details-animation");
       });
     });
 
-    detailsBack.addEventListener("touchstart", function() {
+    document.getElementById("place-details-header").addEventListener("touchstart", function(event) {
       document.getElementById("animate-details").classList.remove("details-animation");
       // hacking the DOM is good skill to have
       setTimeout(function() {

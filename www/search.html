@@ -14,7 +14,7 @@
 
 <body>
     <main class="full-screen">
-        <header id="search-header">
+        <header id="search-header" class="page-header">
             <h1 class="headings-h1">
                 <i class="menu-icon fa fa-1x fa-arrow-left" id="back-icon"></i>
                 Search
@@ -40,54 +40,78 @@
             </section>
         </section>
     </main>
-    <aside id="search-details" class="full-screen">
-        <header class="chat-header">
-            <i class="menu-icon fa fa-3x fa-arrow-left"></i>
-            <h1 class="headings-h1">London</h1>
-            <i class="fa fa-3x fa-map-marker" aria-hidden="true"></i>
-        </header>
-        <section class="search-section search-details-section">
-            <section class="date-picker">
-                <div class="check-inputs">
-                    <span>Check In</span>
-                    <input type="date" class="picker">
-                </div>
-                <hr>
-                <div class="check-inputs">
-                    <span>Check out</span>
-                    <input type="date" class="picker">
-                </div>
-            </section>
-            <button class="big-button more-filters">More Filters</button>
-            <section class="post">
-                <div class="post-image"></div>
-                <div class="post-description">
-                    <h2>Stylish and Cozy flat</h2>
-                    <span class="mini-description">Entire home</span>
-                    <div class="stars">
-                        <i class="fa fa-2x fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-2x fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-2x fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-2x fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+    <aside id="search-details" class="full-screen animation-parent">
+        <div class="animation-child">
+            <header id="search-header" class="page-header">
+                <h1 class="headings-h1">
+                    <i class="menu-icon fa fa-1x fa-arrow-left"></i>
+                    San Francisco
+                    <i class="fa fa-1x fa-map-marker" aria-hidden="true" id="map-icon"></i>
+                </h1>
+            </header>
+            <section class="search-details-section">
+                <section class="date-picker">
+                    <div class="check-inputs">
+                        <span>Check In</span>
+                        <input type="date" class="picker">
                     </div>
-                </div>
-            </section>
-            <section class="post">
-                <div class="post-image"></div>
-                <div class="post-description">
-                    <h2>Stylish and Cozy flat</h2>
-                    <span class="mini-description">Entire home</span>
-                    <div class="stars">
-                        <i class="fa fa-2x fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-2x fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-2x fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-2x fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                    <hr>
+                    <div class="check-inputs">
+                        <span>Check out</span>
+                        <input type="date" class="picker">
                     </div>
-                </div>
+                </section>
+                <button class="big-button more-filters">More Filters</button>
+                <section class="post">
+                    <div class="post-image"></div>
+                    <div class="post-description">
+                        <h2>Stylish and Cozy flat</h2>
+                        <div class="description-group">
+                            <span class="mini-description">Entire home</span>
+                            <div class="stars">
+                                <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="post">
+                    <div class="post-image second-image"></div>
+                    <div class="post-description">
+                        <h2>Room for a couple</h2>
+                        <div class="description-group">
+                            <span class="mini-description">Room</span>
+                            <div class="stars">
+                                <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="post">
+                    <div class="post-image third-image"></div>
+                    <div class="post-description">
+                        <h2>Stylish House</h2>
+                        <div class="description-group">
+                            <span class="mini-description">House</span>
+                            <div class="stars">
+                                <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-2x fa-star" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </section>
-        </section>
+        </div>
     </aside>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/bundle.js"></script>
