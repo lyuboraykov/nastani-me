@@ -207,16 +207,19 @@ var Home = exports.Home = {
     [].forEach.call(placeDetailsIcons, function (el) {
       el.addEventListener("touchstart", function (event) {
         var element = this.parentElement.parentElement.getElementsByClassName("place-location")[0],
-            heading = document.getElementsByClassName("details-h1")[0];
+            heading = document.getElementsByClassName("details-h1")[0],
+            icon = heading.getElementsByTagName("i")[0];
 
-        heading.innerText = element.innerText;
+        heading.innerHTML = "";
+        heading.appendChild(icon);
+        heading.innerHTML += element.textContent;
 
         document.getElementById("place-details").classList.add("bigger-index");
         document.getElementById("animate-details").classList.add("details-animation");
       });
     });
 
-    detailsBack.addEventListener("touchstart", function () {
+    document.getElementById("place-details-header").addEventListener("touchstart", function (event) {
       document.getElementById("animate-details").classList.remove("details-animation");
       // hacking the DOM is good skill to have
       setTimeout(function () {
@@ -540,7 +543,7 @@ var Reservation = exports.Reservation = {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 exports.Search = undefined;
 
@@ -549,22 +552,37 @@ var _constants = require('./constants');
 var _utils = require('./utils');
 
 var Search = exports.Search = {
-  initialize: function initialize() {
-    var backButton = document.getElementById("back-icon"),
-        searchfield = document.getElementById("searchfield");
+    initialize: function initialize() {
+        var backButton = document.getElementById("back-icon"),
+            searchfield = document.getElementById("searchfield"),
+            searchButton = document.getElementById("search-nearby"),
+            detailsPage = document.getElementById("search-details"),
+            detailsBack = document.querySelectorAll("#search-details .fa-arrow-left")[0];
 
-    backButton.addEventListener("click", function () {
-      _utils.Utils.gotoPage(_constants.Constants.pages.home);
-    });
+        backButton.addEventListener("touchstart", function (event) {
+            _utils.Utils.gotoPage(_constants.Constants.pages.home);
+        });
 
-    searchfield.addEventListener("input", function (event) {
-      var value = event.target.value;
+        searchfield.addEventListener("input", function (event) {
+            var value = event.target.value;
 
-      if (value.toUpperCase() === "LONDON") {
-        alert("hello");
-      }
-    });
-  }
+            if (value.toUpperCase() === "LONDON") {
+                alert("hello");
+            }
+        });
+
+        searchButton.addEventListener("touchstart", function (event) {
+            detailsPage.classList.add("z-index");
+            detailsPage.children[0].classList.add("animate-transform");
+        });
+
+        detailsBack.addEventListener("touchstart", function (event) {
+            detailsPage.children[0].classList.remove("animate-transform");
+            setTimeout(function () {
+                detailsPage.classList.remove("z-index");
+            }, 300);
+        });
+    }
 };
 
 },{"./constants":3,"./utils":12}],12:[function(require,module,exports){

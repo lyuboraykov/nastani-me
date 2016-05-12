@@ -34,7 +34,11 @@
 
 .more-filters {
     display: block;
-    width: 90%;
+    width: 100%;
+    height: 40px;
+    border: 2px solid #ff5a5f;
+    color: #ff5a5f;
+    background-color: white;
 }
 
 #cancel-button {
@@ -67,7 +71,7 @@
 }
 
 .search-section {
-    height: 88%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -111,10 +115,11 @@
 
 .date-picker {
     background-color: white;
-    height: 15%;
-    width: 90%;
+    height: 120px;
+    width: 100%;
     border: 1px solid black;
     display: flex;
+    margin: 0 !important;
 }
 
 .picker {
@@ -124,20 +129,77 @@
 .search-details-section {
     background-color: #f0f0f0;
     align-items: center;
+    padding: 5%;
 }
 
 .post-image {
-  background-image: url("../img/flat.jpg");
-  background-size: cover;
-  height: 60%;
-  width: 100%;
+    background-image: url("../img/flat.jpg");
+    background-size: cover;
+    height: 60%;
+    width: 110%;
+    margin-left: -5%;
+}
+
+.second-image {
+    background-image: url("../img/room2.jpg");
+}
+
+.third-image {
+    background-image: url("../img/house.jpg");
 }
 
 .post {
-  width: 100%;
-  height: 50%;
+    width: 100%;
+    height: 300px;
+}
+
+.post h2 {
+    font-size: 2rem;
+    margin: 0;
+    text-align: center;
 }
 
 .post-description {
-  padding: 0 5%;
+    padding: 5%;
+}
+
+.mini-description {
+    font-size: 1.5rem;
+}
+
+.search-details-section > * {
+    margin-top: 5%;
+}
+
+.description-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.animation-parent {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow-y: scroll;
+}
+
+.animation-child {
+    width: 100%;
+    height: 100%;
+    transform: translateX(100%);
+    transition: transform .256s ease-out;
+}
+
+.animate-transform {
+    transform: translateX(0) !important;
+}
+
+.z-index {
+    z-index: 1 !important;
+    background-color: initial;
+}
+
+#search-details {
+    background-color: transparent;
 }

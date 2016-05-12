@@ -481,11 +481,10 @@ h3 {
 #invite-header,
 #profile-header,
 #listing-header {
-    height: 12%;
+    height: 10%;
     background-color: #ff5c5f;
     color: #ffffff;
     display: flex;
-    align-items: center;
 }
 
 #chat-header .fa,
@@ -694,7 +693,7 @@ h3 {
 }
 
 #place-details-header {
-    height: 13%;
+    height: 10%;
     background-color: #ff5c5f;
     color: #ffffff;
     display: flex;
@@ -706,11 +705,6 @@ h3 {
     float: left;
     padding: 6% 0;
 }
-
-#place-details-header .details-h1 {
-    font-size: 25px;
-}
-
 
 #place-details .details-animation {
     transform: translateX(0) !important;

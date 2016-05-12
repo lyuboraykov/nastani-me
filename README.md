@@ -20,7 +20,9 @@ phonegap serve  # in another
 
 ### Remaining
 
-Inclusive: mockup #:
-    2 - 6,
-    14 - 16,
-    21, 22, 29
+ - 2.2.2
+ - 2.3.1
+ - 2.3.2
+ - 2.3.3
+ - 2.11.1
+ - 2.11.2
