@@ -12,6 +12,7 @@ export var Constants = {
     search: '/search.html',
     profile: '/profile.html',
     listing: '/listing.html',
+    reservation: '/reservation.html',
     index: '/'
   },
 

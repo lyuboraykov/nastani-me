@@ -277,6 +277,7 @@ body,
 #chat-main,
 #help-main,
 #profile-main,
+#reservation-main,
 #listing-main {
     background-color: #fff;
 }
@@ -473,6 +474,7 @@ h3 {
 }
 
 #chat-header,
+#reservation-header,
 #search-header,
 #details-header,
 #help-header,
@@ -487,6 +489,7 @@ h3 {
 }
 
 #chat-header .fa,
+#reservation-header .fa,
 #search-header .fa,
 #details-header .fa,
 #help-header .fa,
@@ -1019,4 +1022,120 @@ h3 {
     white-space: nowrap;
     cursor: pointer;
     height: 7%;
+}
+
+#reservation-content .date-range,
+#reservation-content .guests {
+    border-bottom: 1px solid #c2c2c2;
+    font-size: 22px;
+    line-height: 30px;
+    padding: 30px;
+    text-align: center;
+}
+
+#reservation-content .date-range .active {
+    color: #ff5a5f;
+}
+
+#reservation-content .date-range .inactive {
+    color: #d8d8d8;
+}
+
+#reservation-content .date-range > .from,
+#reservation-content .date-range > .to {
+    display: inline-block;
+    width: 50%;
+}
+
+#reservation-content .date-range > .from {
+    float: left;
+}
+
+#reservation-content .guests > span {
+    padding: 10px;
+}
+
+#reservation-content .guests div {
+    display: inline-flex;
+}
+
+#reservation-content .guests .buttons {
+    border: 1px solid #c2c2c2;
+    border-radius: 5px;
+    font-size: 30px;
+    margin-left: 30px;
+}
+
+#reservation-content .guests .buttons > div {
+    cursor: pointer;
+    padding: 12px;
+}
+
+#reservation-content .guests .buttons > .increase {
+    background-color: #ff5a5f;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#reservation-content .guests .buttons > .decrease {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#reservation-content .booking-comment {
+    font-size: 16px;
+    padding: 30px;
+}
+
+#reservation-content .booking-comment textarea {
+    height: 200px;
+    width: 100%;
+}
+
+#reservation-footer .big-button {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    height: 40px;
+}
+
+#reservation-main .blur {
+}
+
+textarea {
+    resize: none;
+}
+
+#reservation-main .dialog {
+    background-color: #fff;
+    border: 1px solid #c2c2c2;
+    border-radius: 5px;
+    font-size: 20px;
+    text-align: center;
+    height: 200px;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    margin-left: -42.5%;
+    width: 85%;
+    -webkit-box-shadow: 0px 0px 200px 15px rgba(100,100,100,1);
+    -moz-box-shadow: 0px 0px 200px 15px rgba(100,100,100,1);
+    box-shadow: 0px 0px 200px 15px rgba(100,100,100,1);
+}
+
+#reservation-main .dialog button {
+    background-color: #f0f0f0;
+    cursor: pointer;
+    height: 2.5rem;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 0.25rem;
+    text-align: center;
+    padding: 5px 15px;
+    font-weight: bold;
+}
+
+#reservation-main .dialog button.accent {
+    background-color: #ff5a5f;
+    color: #fff;
 }
