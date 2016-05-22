@@ -35,7 +35,7 @@ export var Utils = {
       // we only live once
       let currentLocation = window.location.href,
           currentLocationElements = currentLocation.split('/');
-      return '/' + currentLocationElements[currentLocationElements.length - 1];
+      return currentLocationElements[currentLocationElements.length - 1];
     }
     if (this.isInGhPages()) {
       return window.location.pathname.replace('/nastani-me/', '');
