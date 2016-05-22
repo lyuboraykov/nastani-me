@@ -100,15 +100,15 @@ var Constants = exports.Constants = {
   },
 
   pages: {
-    home: '/home.html',
-    chat: '/chat.html',
-    help: '/help.html',
-    invite: '/invite.html',
-    search: '/search.html',
-    profile: '/profile.html',
-    listing: '/listing.html',
-    reservation: '/reservation.html',
-    index: '/'
+    home: 'home.html',
+    chat: 'chat.html',
+    help: 'help.html',
+    invite: 'invite.html',
+    search: 'search.html',
+    profile: 'profile.html',
+    listing: 'listing.html',
+    reservation: 'reservation.html',
+    index: ''
   },
 
   storageKey: "nastani.me.last.page"
@@ -626,7 +626,7 @@ var Utils = exports.Utils = {
           currentLocationElements = currentLocation.split('/');
       return '/' + currentLocationElements[currentLocationElements.length - 1];
     }
-    return window.location.pathname;
+    return window.location.pathname.replace('/', '');
   },
   gotoPage: function gotoPage(page) {
     if (this.isInPhoneGap()) {

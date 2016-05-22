@@ -32,7 +32,7 @@ export var Utils = {
           currentLocationElements = currentLocation.split('/');
       return '/' + currentLocationElements[currentLocationElements.length - 1];
     }
-    return window.location.pathname;
+    return window.location.pathname.replace('/', '');
   },
 
   gotoPage(page) {
