@@ -635,7 +635,7 @@ var Utils = exports.Utils = {
       window.location.href = window.location.href.replace(currentPage, page);
     } else {
       // we're in browser, things work normally
-      window.location.href = page;
+      window.location.href = 'nastani-me/' + page;
     }
   }
 };
