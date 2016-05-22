@@ -4,7 +4,8 @@
   "description": "template for using browserify, babel and ES6",
   "scripts": {
     "bundle": "browserify src/app.js -t [ babelify --presets [ es2015 ] ] --outfile www/js/bundle.js -v",
-    "watch": "watchify src/app.js -t [ babelify --presets [ es2015 ] ] --outfile www/js/bundle.js -v"
+    "watch": "watchify src/app.js -t [ babelify --presets [ es2015 ] ] --outfile www/js/bundle.js -v",
+    "publish": "./publish.sh"
   },
   "author": {
     "name": "Steve Gill"
