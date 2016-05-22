@@ -17,6 +17,11 @@ phonegap serve  # in another
 # open browser on the shown URL or use the phonegap app on the phone
 ```
 
+## Publishing
+```sh
+npm run publish
+```
+
 
 ### Remaining
 
