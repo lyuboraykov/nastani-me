@@ -25,12 +25,20 @@ export var Utils = {
     return false;
   },
 
+  isInGhPages() {
+    let pathName = window.location.pathname;
+    return pathName.indexOf('nastani-me/') !== -1;
+  },
+
   getCurrentPage() {
     if (this.isInPhoneGap()) {
       // we only live once
       let currentLocation = window.location.href,
           currentLocationElements = currentLocation.split('/');
       return '/' + currentLocationElements[currentLocationElements.length - 1];
+    }
+    if (this.isInGhPages()) {
+      return window.location.pathname.replace('/nastani-me/', '');
     }
     return window.location.pathname.replace('/', '');
   },
