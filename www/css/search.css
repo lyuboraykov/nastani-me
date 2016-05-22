@@ -203,3 +203,72 @@
 #search-details {
     background-color: transparent;
 }
+
+.icon-group {
+    display: flex;
+    float: right;
+    width: 20%;
+    justify-content: space-between;
+}
+
+#house-details {
+    background-color: #f0f0f0;
+}
+
+#house-details > .animation-child > section {
+    height: 90%;
+    padding: 0 5%;
+}
+
+#house-details .post-image {
+    height: 40%;
+}
+
+#house-details .rank {
+    display: flex;
+    justify-content: space-between;
+}
+
+#house-details .stars {
+    display: inline;
+}
+
+.header-and-owner > h2 {
+    display: inline;
+    margin: 0;
+}
+
+.header-and-owner {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    padding: 5% 0;
+}
+
+.book-btn {
+    display: inline-block;
+    width: 30%;
+    color: white;
+    height: 30px;
+    background-color: #ff5a5f;
+    line-height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid black;
+    font-size: 1rem;
+}
+
+.icon-with-text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.icon-with-text span {
+    font-size: 1rem;
+}
+
+.room-information {
+    display: flex;
+    justify-content: space-between;
+}

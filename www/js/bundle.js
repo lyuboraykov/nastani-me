@@ -21,6 +21,8 @@ var _listing = require('./listing');
 
 var _reservation = require('./reservation');
 
+var _filter = require('./filter');
+
 var _utils = require('./utils');
 
 var app = {
@@ -56,6 +58,9 @@ var app = {
       case _constants.Constants.pages.reservation:
         _reservation.Reservation.initialize();
         break;
+      case _constants.Constants.pages.filter:
+        _filter.Filter.initialize();
+        break;
       default:
         _index.Index.initialize();
         break;
@@ -65,7 +70,7 @@ var app = {
 
 app.initialize();
 
-},{"./chat":2,"./constants":3,"./help":4,"./home":5,"./index":6,"./invite":7,"./listing":8,"./profile":9,"./reservation":10,"./search":11,"./utils":12}],2:[function(require,module,exports){
+},{"./chat":2,"./constants":3,"./filter":4,"./help":5,"./home":6,"./index":7,"./invite":8,"./listing":9,"./profile":10,"./reservation":11,"./search":12,"./utils":13}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -87,7 +92,7 @@ var Chat = exports.Chat = {
   }
 };
 
-},{"./constants":3,"./utils":12}],3:[function(require,module,exports){
+},{"./constants":3,"./utils":13}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -108,6 +113,7 @@ var Constants = exports.Constants = {
     profile: 'profile.html',
     listing: 'listing.html',
     reservation: 'reservation.html',
+    filter: 'filter.html',
     index: ''
   },
 
@@ -115,6 +121,35 @@ var Constants = exports.Constants = {
 };
 
 },{}],4:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Filter = undefined;
+
+var _constants = require('./constants');
+
+var _utils = require('./utils');
+
+var Filter = exports.Filter = {
+    initialize: function initialize() {
+        var saveBtn = document.getElementsByClassName("save")[0],
+            bigButtons = document.getElementsByClassName("big-button");
+
+        saveBtn.addEventListener("touchstart", function (event) {
+            _utils.Utils.gotoPage(_constants.Constants.pages.search);
+        });
+
+        Array.prototype.slice.call(bigButtons).forEach(function (button) {
+            button.addEventListener("touchstart", function () {
+                _utils.Utils.gotoPage(_constants.Constants.pages.filter);
+            });
+        });
+    }
+};
+
+},{"./constants":3,"./utils":13}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -156,7 +191,7 @@ var Help = exports.Help = {
     }
 };
 
-},{"./constants":3,"./utils":12}],5:[function(require,module,exports){
+},{"./constants":3,"./utils":13}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -286,7 +321,7 @@ var Home = exports.Home = {
   }
 };
 
-},{"./constants":3,"./utils":12}],6:[function(require,module,exports){
+},{"./constants":3,"./utils":13}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -345,7 +380,7 @@ var Index = exports.Index = {
   }
 };
 
-},{"./constants":3,"./utils":12}],7:[function(require,module,exports){
+},{"./constants":3,"./utils":13}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -367,7 +402,7 @@ var Invite = exports.Invite = {
   }
 };
 
-},{"./constants":3,"./utils":12}],8:[function(require,module,exports){
+},{"./constants":3,"./utils":13}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -446,7 +481,7 @@ var Listing = exports.Listing = {
     }
 };
 
-},{"./constants":3,"./utils":12}],9:[function(require,module,exports){
+},{"./constants":3,"./utils":13}],10:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -490,7 +525,7 @@ var Profile = exports.Profile = {
     }
 };
 
-},{"./constants":3,"./utils":12}],10:[function(require,module,exports){
+},{"./constants":3,"./utils":13}],11:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -539,7 +574,7 @@ var Reservation = exports.Reservation = {
     }
 };
 
-},{"./constants":3,"./utils":12}],11:[function(require,module,exports){
+},{"./constants":3,"./utils":13}],12:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -557,18 +592,15 @@ var Search = exports.Search = {
             searchfield = document.getElementById("searchfield"),
             searchButton = document.getElementById("search-nearby"),
             detailsPage = document.getElementById("search-details"),
+            houseDetails = document.getElementById("house-details"),
+            image = document.getElementsByClassName("post-image")[0],
+            bookBtn = document.getElementsByClassName("book-btn")[0],
+            bigButtons = document.getElementsByClassName("big-button"),
+            houseDetailsBack = document.querySelectorAll("#house-details .fa-arrow-left")[0],
             detailsBack = document.querySelectorAll("#search-details .fa-arrow-left")[0];
 
         backButton.addEventListener("touchstart", function (event) {
             _utils.Utils.gotoPage(_constants.Constants.pages.home);
-        });
-
-        searchfield.addEventListener("input", function (event) {
-            var value = event.target.value;
-
-            if (value.toUpperCase() === "LONDON") {
-                alert("hello");
-            }
         });
 
         searchButton.addEventListener("touchstart", function (event) {
@@ -582,10 +614,37 @@ var Search = exports.Search = {
                 detailsPage.classList.remove("z-index");
             }, 300);
         });
+
+        image.addEventListener("touchstart", function (event) {
+            houseDetails.classList.add("z-index");
+            houseDetails.children[0].classList.add("animate-transform");
+            houseDetails.children[0].style.backgroundColor = "#f0f0f0";
+            setTimeout(function () {
+                houseDetails.style.backgroundColor = "#f0f0f0";
+            }, 300);
+        });
+
+        houseDetailsBack.addEventListener("touchstart", function (event) {
+            houseDetails.style.backgroundColor = "transparent";
+            houseDetails.children[0].classList.remove("animate-transform");
+            setTimeout(function () {
+                houseDetails.classList.remove("z-index");
+            }, 300);
+        });
+
+        bookBtn.addEventListener("touchstart", function () {
+            _utils.Utils.gotoPage(_constants.Constants.pages.reservation);
+        });
+
+        Array.prototype.slice.call(bigButtons).forEach(function (button) {
+            button.addEventListener("touchstart", function () {
+                _utils.Utils.gotoPage(_constants.Constants.pages.filter);
+            });
+        });
     }
 };
 
-},{"./constants":3,"./utils":12}],12:[function(require,module,exports){
+},{"./constants":3,"./utils":13}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

@@ -8,6 +8,7 @@ import {Search} from './search';
 import {Profile} from './profile';
 import {Listing} from './listing';
 import {Reservation} from './reservation';
+import {Filter} from './filter';
 import {Utils} from './utils';
 
 let app = {
@@ -43,6 +44,9 @@ let app = {
         break;
       case Constants.pages.reservation:
         Reservation.initialize();
+        break;
+      case Constants.pages.filter:
+        Filter.initialize();
         break;
       default:
         Index.initialize();
